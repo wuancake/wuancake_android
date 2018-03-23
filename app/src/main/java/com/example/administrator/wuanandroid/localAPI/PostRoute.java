@@ -1,6 +1,8 @@
 package com.example.administrator.wuanandroid.localAPI;
 
-import com.example.administrator.wuanandroid.Bean.LoginResultBean;
+import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean;
+import com.example.administrator.wuanandroid.Bean.StatusBean.StatusBean;
+import com.example.administrator.wuanandroid.Bean.StatusBean.StatusRequestBean;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -19,9 +21,32 @@ import retrofit2.http.POST;
 
 public interface PostRoute {
 
+    /**
+     *  接口：登录功能：
+            登录考勤系统。
+            POST /login
+        请求格式：JSON 
+        {
+        "email": "894144874@qq.com",
+        "password": "123456"
+        }
+
+        响应成功：
+        {
+        “userId”:”1”//用户id，标识唯一的用户
+        “groupId”:7   //分组id
+        “infoText”:”重定向”,
+        “infoCode”:”301”,
+        “url”:”/main
+
+         }
+     */
 
     @Headers({"Content-type:application/json;charset=utf-8","Accept:application/json"})
     @POST("/login")
     Call<LoginResultBean> login(@Body RequestBody route);
+
+
+
 
 }

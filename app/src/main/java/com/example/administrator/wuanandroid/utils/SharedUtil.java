@@ -33,7 +33,7 @@ public class SharedUtil  {
         sp.edit().putInt(key, value).commit();
     }
 
-    public static int getString(Context mContext , String key , int deafValue){
+    public static int getInt(Context mContext , String key , int deafValue){
         SharedPreferences sp = mContext.getSharedPreferences(NAME,Context.MODE_PRIVATE);
         return sp.getInt(key,deafValue);
     }
