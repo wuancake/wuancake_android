@@ -9,20 +9,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.wuanandroid.Bean.LoginRequestBean;
-import com.example.administrator.wuanandroid.Bean.LoginResultBean;
+import com.example.administrator.wuanandroid.Bean.LoginBean.LoginRequestBean;
+import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean;
 import com.example.administrator.wuanandroid.MainActivity;
 import com.example.administrator.wuanandroid.R;
 import com.example.administrator.wuanandroid.localAPI.PostRoute;
 import com.example.administrator.wuanandroid.utils.L;
 import com.example.administrator.wuanandroid.utils.SharedUtil;
 import com.google.gson.Gson;
-
-import butterknife.BindView;
-import butterknife.BindViews;
-import butterknife.ButterKnife;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -46,6 +43,7 @@ import static com.example.administrator.wuanandroid.utils.StaticClass.WUAN_URL;
 
 public class LoginActivity extends AppCompatActivity {
 
+
     L l;
     EditText accountInput;
     EditText passwordInput;
@@ -63,9 +61,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        accountInput = findViewById(R.id.account);
-        passwordInput = findViewById(R.id.password);
-        login = findViewById(R.id.login);
+        accountInput = findViewById(R.id.login_account);
+        passwordInput = findViewById(R.id.login_password);
+        TextView textView = findViewById(R.id.login_register);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "注册", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        login = findViewById(R.id.login_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                     RequestToLogin(route);
                 }
                 if(TextUtils.isEmpty(accountStr) || TextUtils.isEmpty(passwordStr)){
-                    l.i("Test");
                     Toast.makeText(LoginActivity.this, "账号或密码不能为空", Toast.LENGTH_SHORT).show();
                 }
 
