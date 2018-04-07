@@ -12,6 +12,9 @@ package com.example.administrator.wuanandroid.utils;
 public class StaticClass {
 
     //logTAG
+    public static final String TAG = "WuAnLife";
+
+    //Shared总Key
     public static final String NAME = "Shared";
 
     //午安URL请求地址

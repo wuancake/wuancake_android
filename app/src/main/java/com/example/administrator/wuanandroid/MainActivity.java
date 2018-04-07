@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid;
 
+import android.content.Intent;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import com.example.administrator.wuanandroid.fragment.ComitntFragment;
 import com.example.administrator.wuanandroid.fragment.LeaveFragment;
 import com.example.administrator.wuanandroid.localAPI.MainStatusLocal;
 import com.example.administrator.wuanandroid.localAPI.PostRoute;
+import com.example.administrator.wuanandroid.ui.SeeWeekNews;
 import com.example.administrator.wuanandroid.utils.L;
 import com.example.administrator.wuanandroid.utils.SharedUtil;
 import com.example.administrator.wuanandroid.utils.StaticClass;
@@ -56,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.mipmap.opendrawer);
         }
-         replaceFragent(new ComitedFragment()); //测试
-//        RequestToStatus();
+//         replaceFragent(new ComitntFragment()); //测试
+        RequestToStatus();
     }
 
     private void initView() {
@@ -103,11 +105,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_main:
+                mDrawerLayout.closeDrawer(NavView);
                 break;
-
             case R.id.nav_myNews:
+                Intent intent = new Intent(MainActivity.this, SeeWeekNews.class);
+                startActivity(intent);
                 break;
             case R.id.nav_exit:
+                onDestroy();
                 break;
 
         }

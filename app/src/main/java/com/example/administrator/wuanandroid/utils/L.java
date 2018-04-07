@@ -1,6 +1,10 @@
 package com.example.administrator.wuanandroid.utils;
 
 import android.util.Log;
+import com.example.administrator.wuanandroid.utils.StaticClass;
+
+import static com.example.administrator.wuanandroid.utils.StaticClass.TAG;
+
 
 /**
  * 项目名：   WuanAndroid
@@ -14,7 +18,7 @@ import android.util.Log;
 public class L {
 
     public static boolean contril = true;
-    public static String TAG ="WuAnLife";
+
 
 
     public void d(String text){
