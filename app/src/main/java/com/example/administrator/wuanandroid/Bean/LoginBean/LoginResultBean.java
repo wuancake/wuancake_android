@@ -20,21 +20,17 @@ import java.util.List;
  */
 
 public class LoginResultBean {
-
-
     /**
-     * userId : 1
-     * groupId : 7
-     * infoText : 重定向
-     * infoCode : 301
-     * url : /main
+     * infoText : 登录成功未选择分组
+     * infoCode : 200
+     * user_id : 10
+     * group_id : 0
      */
 
-    private String userId;
-    private int groupId;
     private String infoText;
     private String infoCode;
-    private String url;
+    private int user_id;
+    private int group_id;
 
     public static LoginResultBean objectFromData(String str) {
 
@@ -80,22 +76,6 @@ public class LoginResultBean {
 
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public int getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
-    }
-
     public String getInfoText() {
         return infoText;
     }
@@ -112,11 +92,31 @@ public class LoginResultBean {
         this.infoCode = infoCode;
     }
 
-    public String getUrl() {
-        return url;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
+
+    public int getGroup_id() {
+        return group_id;
+    }
+
+    public void setGroup_id(int group_id) {
+        this.group_id = group_id;
+    }
+
+
+    /**
+     * {
+     "infoText":"登录成功未选择分组",
+     "infoCode":"200",
+     "user_id":10,
+     "group_id":0
+     }
+     */
+
+
 }

@@ -3,8 +3,6 @@
     package="com.example.administrator.wuanandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
-=======
     <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 获取wifi网络状态的信息 -->
@@ -17,7 +15,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 读取log日志 -->
     <uses-permission android:name="android.permission.READ_LOGS" />
->>>>>>> de35b0f3abaa5c673a154752bd83d2ece4a766af
 
     <application
         android:allowBackup="true"
@@ -26,35 +23,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-=======
         <activity android:name=".MainActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+
         </activity>
-        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.LoginActivity" >
+
+        </activity>
+
         <activity android:name=".ui.SeeWeekNews" />
         <activity
             android:name=".ui.WriteActivity"
             android:label="@string/title_activity_write"
             android:theme="@style/AppTheme">
->>>>>>> de35b0f3abaa5c673a154752bd83d2ece4a766af
 
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".MainActivity" />
-        <activity android:name=".GroupingActivity" />
-        <activity android:name=".LeaveActivity"></activity>
-=======
         <activity android:name=".ui.SavedActivity" />
+        <activity android:name=".ui.RegisterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
->>>>>>> de35b0f3abaa5c673a154752bd83d2ece4a766af
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.GroupingActivity" />
+        <activity android:name=".ui.LeaveActivity"></activity>
     </application>
 
 </manifest>

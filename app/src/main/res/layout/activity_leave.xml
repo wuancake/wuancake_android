@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.wuanandroid.LeaveActivity">
+    tools:context="com.example.administrator.wuanandroid.ui.LeaveActivity">
 
     <LinearLayout
         android:id="@+id/llLeaveInfo"
@@ -21,7 +21,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:src="@drawable/logo" />
+                android:src="@mipmap/logo" />
+
+            <TextView
+                android:id="@+id/btnLeaveReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="14dp"
+                android:drawableLeft="@mipmap/leave_btn_return" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -31,15 +40,6 @@
                 android:text="我要请假"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/btnLeaveReturn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="14dp"
-                android:drawableLeft="@drawable/leave_btn_return" />
         </FrameLayout>
 
         <LinearLayout

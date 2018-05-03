@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid.response;
+package com.example.administrator.wuanandroid.Bean.LeaveBean;
 
 /**
  * Created by ChijinLoujue on 2018/4/27.

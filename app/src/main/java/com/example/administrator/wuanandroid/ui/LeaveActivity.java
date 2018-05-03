@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid;
+package com.example.administrator.wuanandroid.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
 
-import com.example.administrator.wuanandroid.response.LeaveResponse;
+import com.example.administrator.wuanandroid.Bean.LeaveBean.LeaveResponse;
+import com.example.administrator.wuanandroid.MainActivity;
+import com.example.administrator.wuanandroid.R;
+import com.example.administrator.wuanandroid.localAPI.UserApi;
+
+import com.example.administrator.wuanandroid.utils.RetrofitSingle;
+import com.example.administrator.wuanandroid.utils.UserHelper;
 
 import retrofit2.Call;
 import retrofit2.Callback;

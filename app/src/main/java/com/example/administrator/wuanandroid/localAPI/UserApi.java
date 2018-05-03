@@ -1,8 +1,9 @@
-package com.example.administrator.wuanandroid;
+package com.example.administrator.wuanandroid.localAPI;
 
-import com.example.administrator.wuanandroid.response.RegisterResponse;
-import com.example.administrator.wuanandroid.response.GroupingResponse;
-import com.example.administrator.wuanandroid.response.LeaveResponse;
+import com.example.administrator.wuanandroid.Bean.GroupBean.GroupingResponse;
+import com.example.administrator.wuanandroid.Bean.LeaveBean.LeaveResponse;
+import com.example.administrator.wuanandroid.Bean.RegisterBean.RegisterResponse;
+
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,7 +18,7 @@ public interface UserApi {
     @POST("/regist")
     @FormUrlEncoded
     Call<RegisterResponse> register(@Field("user_name") String user_name, @Field("email") String email,
-                                    @Field("QQ") String QQ, @Field("password") String password);
+                                    @Field("qq") int qq, @Field("password") String password);
 
     @POST("/group")
     @FormUrlEncoded

@@ -1,10 +1,11 @@
-package com.example.administrator.wuanandroid.response;
+package com.example.administrator.wuanandroid.Bean.GroupBean;
 
 /**
- * Created by ChijinLoujue on 2018/4/11.
+ * Created by ChijinLoujue on 2018/4/25.
  */
 
-public class RegisterResponse {
+
+public class GroupingResponse {
     private String infoText;
     private int infoCode;
     private String url;
@@ -52,4 +53,3 @@ public class RegisterResponse {
     }
 
 }
-

@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.nav_exit:
-                onDestroy();
+                System.exit(0);
                 break;
 
         }
@@ -132,12 +132,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void RequestToStatus(){
-        final String s = SharedUtil.getString(MainActivity.this,"UserId","1");
+//        String s = SharedUtil.getString(MainActivity.this,"UserId","1");
+        String s = "1";
         int userid = Integer.parseInt(s);
         StatusRequestBean bean = new StatusRequestBean();
         bean.setId(userid);
         Gson gson = new Gson();
-        final String request = gson.toJson(bean);//请求体
+        String request = gson.toJson(bean);//请求体
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -153,7 +154,8 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<StatusBean>() {
             @Override
             public void onResponse(Call<StatusBean> call, Response<StatusBean> response) {
-                if(response.body().getInfoCode() == 301){
+                l.i(response.code()+"");
+                if(response.body().getInfoCode() == 200){
                     intoFragment(response.body().getStatus().toString());
                     SharedUtil sharedUtil = new SharedUtil();
                     //将周数保存

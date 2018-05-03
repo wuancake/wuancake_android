@@ -1,22 +1,30 @@
-package com.example.administrator.wuanandroid;
+package com.example.administrator.wuanandroid.ui;
 
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.wuanandroid.response.RegisterResponse;
+import com.example.administrator.wuanandroid.Bean.RegisterBean.RegisterResponse;
+import com.example.administrator.wuanandroid.Bean.UserBean.User;
+import com.example.administrator.wuanandroid.R;
+import com.example.administrator.wuanandroid.localAPI.UserApi;
+
+import com.example.administrator.wuanandroid.utils.L;
+import com.example.administrator.wuanandroid.utils.RetrofitSingle;
+import com.example.administrator.wuanandroid.utils.UserHelper;
 
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Callback;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-
+    L l = new L();
     TextView submit, login;
     EditText username, email, qq, password, password2;
 
@@ -61,30 +69,33 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void netRequest() {
+        int qqNum = Integer.parseInt(qq.getText().toString());
         RetrofitSingle
                 .getRetrofit()
                 .create(UserApi.class)
-                .register(username.getText().toString(), email.getText().toString(), qq.getText().toString(), password.getText().toString())
+                .register(username.getText().toString(), email.getText().toString(), qqNum, password.getText().toString())
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        l.i(response.code()+"");
                         if (response.isSuccessful()) {
                             RegisterResponse registerResponse = response.body();
                             if (registerResponse != null) {
                                 if (registerResponse.getInfoCode() == 500) {
                                     Toast.makeText(getApplicationContext(), registerResponse.getInfoText(), Toast.LENGTH_SHORT).show();
-                                } else if (registerResponse.getInfoCode() == 301) {
+                                } else if (registerResponse.getInfoCode() == 200) {
                                     Toast.makeText(getApplicationContext(), registerResponse.getInfoText(), Toast.LENGTH_SHORT).show();
                                     // Toast.makeText(getApplicationContext(), registerResponse.getInfoText(), Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
 
-                                    User user = new User();
-                                    user.setUname(username.getText().toString());
-                                    user.setUser_id(registerResponse.getUser_id());
-                                    user.setEmail(email.getText().toString());
-                                    user.setQq(Integer.parseInt(qq.getText().toString()));
-                                    user.setPassword(password.getText().toString());
-                                    user.setGroup_id(registerResponse.getGroup_id());
-                                    UserHelper.saveUser(getApplicationContext(), user);
+//                                    User user = new User();
+//                                    user.setUname(username.getText().toString());
+//                                    user.setUser_id(registerResponse.getUser_id());
+//                                    user.setEmail(email.getText().toString());
+//                                    user.setQq(Integer.parseInt(qq.getText().toString()));
+//                                    user.setPassword(password.getText().toString());
+//                                    user.setGroup_id(registerResponse.getGroup_id());
+//                                    UserHelper.saveUser(getApplicationContext(), user);
                                     //Toast.makeText(getApplicationContext(), registerResponse.getInfoText(), Toast.LENGTH_SHORT).show();
                                     registerToLogin();
                                 }

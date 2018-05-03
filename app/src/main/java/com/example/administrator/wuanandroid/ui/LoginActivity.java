@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "注册", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
             }
         });
 
@@ -115,22 +115,25 @@ public class LoginActivity extends AppCompatActivity {
 
         //创建请求体
         RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
+
         Call<LoginResultBean> call = postRoute.login(body);
 
         //异步发出请求
         call.enqueue(new Callback<LoginResultBean>() {
             @Override
             public void onResponse(Call<LoginResultBean> call, Response<LoginResultBean> response) {
-                l.i(response.body().getUserId());
+                l.i(response.code()+"");
+                l.i(response.body().getUser_id()+"");
                 l.i(response.body().getInfoCode());
-                if(response.body().getInfoCode().equals("301")){
+                if(response.body().getInfoCode().equals("200")){
                     l.i("登陆成功");
                     SharedUtil su = new SharedUtil();
-                    su.putString(LoginActivity.this,"UserId" , response.body().getUserId().toString());
-                    su.putInt(LoginActivity.this,"Group",response.body().getGroupId());
+                    su.putString(LoginActivity.this,"UserId" , response.body().getUser_id()+"");
+                    su.putInt(LoginActivity.this,"Group",response.body().getGroup_id());
+                    l.i(response.body().getUser_id()+""+response.body().getGroup_id());
 
-                    if(response.body().getGroupId() == 0){
-//                        startActivity(new Intent(LoginActivity.this,GroupActivity.class));
+                    if(response.body().getGroup_id() == 0){
+                        startActivity(new Intent(LoginActivity.this,GroupingActivity.class));
                     }else{
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     }
