@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid.Bean;
+package com.example.administrator.wuanandroid.Bean.UserBean;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -11,36 +11,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 项目名：   WuanAndroid
- * 包名 ：    com.example.administrator.wuanandroid.Bean
- * 文件名：   LoginRequestBean
- * 创建者:    Nixo
- * 创建时间：  2018/3/16/016-20:21
- * 描述：      登陆请求Bean；
+ * Created by ChijinLoujue on 2018/3/30.
  */
 
-public class LoginRequestBean {
-
+public class UserBrean {
 
     /**
+     * user_name : 张三
      * email : 894144874@qq.com
+     * qq : 283773833
      * password : 123456
      */
 
+    private String user_name;
     private String email;
+    private int qq;
     private String password;
 
-    public static LoginRequestBean objectFromData(String str) {
+    public static UserBrean objectFromData(String str) {
 
-        return new Gson().fromJson(str, LoginRequestBean.class);
+        return new Gson().fromJson(str, UserBrean.class);
     }
 
-    public static LoginRequestBean objectFromData(String str, String key) {
+    public static UserBrean objectFromData(String str, String key) {
 
         try {
             JSONObject jsonObject = new JSONObject(str);
 
-            return new Gson().fromJson(jsonObject.getString(str), LoginRequestBean.class);
+            return new Gson().fromJson(jsonObject.getString(str), UserBrean.class);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -48,19 +46,19 @@ public class LoginRequestBean {
         return null;
     }
 
-    public static List<LoginRequestBean> arrayLoginRequestBeanFromData(String str) {
+    public static List<UserBrean> arrayUserBreanFromData(String str) {
 
-        Type listType = new TypeToken<ArrayList<LoginRequestBean>>() {
+        Type listType = new TypeToken<ArrayList<UserBrean>>() {
         }.getType();
 
         return new Gson().fromJson(str, listType);
     }
 
-    public static List<LoginRequestBean> arrayLoginRequestBeanFromData(String str, String key) {
+    public static List<UserBrean> arrayUserBreanFromData(String str, String key) {
 
         try {
             JSONObject jsonObject = new JSONObject(str);
-            Type listType = new TypeToken<ArrayList<LoginRequestBean>>() {
+            Type listType = new TypeToken<ArrayList<UserBrean>>() {
             }.getType();
 
             return new Gson().fromJson(jsonObject.getString(str), listType);
@@ -74,12 +72,28 @@ public class LoginRequestBean {
 
     }
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getQq() {
+        return qq;
+    }
+
+    public void setQq(int qq) {
+        this.qq = qq;
     }
 
     public String getPassword() {

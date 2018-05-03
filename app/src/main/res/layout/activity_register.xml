@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.wuanandroid.RegisterActivity">
+    tools:context="com.example.administrator.wuanandroid.ui.RegisterActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:src="@drawable/logo" />
+            android:src="@mipmap/logo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:src="@drawable/user" />
+            android:src="@mipmap/user" />
 
         <EditText
             android:id="@+id/RegisterUsername"
@@ -62,7 +62,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:src="@drawable/mailbox" />
+            android:src="@mipmap/mailbox" />
 
         <EditText
             android:id="@+id/RegisterEmail"
@@ -88,7 +88,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:src="@drawable/qq" />
+            android:src="@mipmap/qq" />
 
         <EditText
             android:id="@+id/RegisterQQ"
@@ -113,7 +113,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:src="@drawable/password" />
+            android:src="@mipmap/password" />
 
         <EditText
             android:id="@+id/RegisterPassword"
@@ -139,7 +139,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:src="@drawable/password3" />
+            android:src="@mipmap/password3" />
 
         <EditText
             android:id="@+id/RegisterPassword2"

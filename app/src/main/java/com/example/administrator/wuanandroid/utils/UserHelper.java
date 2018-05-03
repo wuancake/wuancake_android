@@ -1,7 +1,9 @@
-package com.example.administrator.wuanandroid;
+package com.example.administrator.wuanandroid.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.administrator.wuanandroid.Bean.UserBean.User;
 
 /**
  * Created by ChijinLoujue on 2018/4/24.

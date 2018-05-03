@@ -42,7 +42,7 @@ public interface PostRoute {
          }
      */
 
-    @Headers({"Content-type:application/json;charset=utf-8","Accept:application/json"})
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
     @POST("/login")
     Call<LoginResultBean> login(@Body RequestBody route);
 

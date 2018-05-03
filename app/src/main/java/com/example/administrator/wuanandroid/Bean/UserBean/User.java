@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid;
+package com.example.administrator.wuanandroid.Bean.UserBean;
 
 import java.util.Map;
 

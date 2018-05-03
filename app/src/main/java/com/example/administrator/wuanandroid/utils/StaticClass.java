@@ -18,7 +18,8 @@ public class StaticClass {
     public static final String NAME = "Shared";
 
     //午安URL请求地址
-    public static final String WUAN_URL = "35.229.211.117";
+    public static final String WUAN_URL = "http://13.114.107.36:8008";
+//    public static final String WUAN_URL = "http://ericheel.free.ngrok.cc";
 
 
 }

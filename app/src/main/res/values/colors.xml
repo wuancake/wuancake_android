@@ -3,7 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-<<<<<<< HEAD
     <color name="button_blue">#5eacfe</color>
     <color name="normal_button">#fafbfc</color>
     <color name="bk">#ffffff</color>
@@ -19,7 +18,5 @@
     <color name="leave_text_white">#ffffff</color>
     <color name="leave_button_blue">#ffffff</color>
     <color name="leave_edit_white">#e2e3ef</color>
-=======
 
->>>>>>> de35b0f3abaa5c673a154752bd83d2ece4a766af
 </resources>
