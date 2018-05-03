@@ -3,4 +3,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="button_blue">#5eacfe</color>
+    <color name="normal_button">#fafbfc</color>
+    <color name="bk">#ffffff</color>
+    <color name="second_text">#606161</color>
+    <color name="text">#181818</color>
+    <color name="divider">#c3c5c6</color>
+    <color name="text_black">#000000</color>
+    <color name="text_blue">#2f94ff</color>
+    <color name="ground_gray">#f6f8fb</color>
+    <color name="button_white">#ffffff</color>
+    <color name="leave_text_black">#333333</color>
+    <color name="leave_text_blue">#3399ff</color>
+    <color name="leave_text_white">#ffffff</color>
+    <color name="leave_button_blue">#ffffff</color>
+    <color name="leave_edit_white">#e2e3ef</color>
 </resources>

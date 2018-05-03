@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.wuanandroid.LeaveActivity">
+
+    <LinearLayout
+        android:id="@+id/llLeaveInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ground_gray"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/text_blue">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="16dp"
+                android:text="我要请假"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btnLeaveReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="14dp"
+                android:drawableLeft="@drawable/leave_btn_return" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="36dp"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前周数："
+                android:textColor="@color/leave_text_black"
+                android:textSize="19sp" />
+            <TextView
+                android:id="@+id/tvWeekNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="117"
+                android:textColor="@color/leave_text_blue"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="36dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请假状态："
+                android:textColor="@color/leave_text_black"
+                android:textSize="19sp" />
+            <TextView
+                android:id="@+id/tvLeaveStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未请假"
+                android:textColor="@color/leave_text_blue"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="36dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请假周数："
+                android:textColor="@color/leave_text_black"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/btnLeaveWeekAmount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/bk_group_card"
+                android:backgroundTint="@color/leave_text_blue"
+                android:text="一周"
+                android:textColor="@color/leave_text_white"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/btnLeaveWeekAmount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/bk_group_card"
+                android:backgroundTint="@color/leave_text_blue"
+                android:text="两周"
+                android:textColor="@color/leave_text_white"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/btnLeaveWeekAmount3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/bk_group_card"
+                android:backgroundTint="@color/leave_text_blue"
+                android:text="三周"
+                android:textColor="@color/leave_text_white"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="31dp"
+            android:text="请假理由（必填）"
+            android:textColor="@color/leave_text_blue"
+            android:textSize="19sp" />
+
+        <EditText
+            android:id="@+id/etLeaveReason"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="145dp"
+            android:background="@drawable/bk_group_card"
+            android:backgroundTint="@color/leave_edit_white"/>
+
+        <TextView
+            android:id="@+id/btnLeaveSubmit"
+            android:layout_width="330dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bk_group_card"
+            android:backgroundTint="@color/button_blue"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="0dp"
+            android:text="提交"
+            android:textColor="@color/text_black"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+</LinearLayout>
