@@ -14,7 +14,7 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 读取log日志 -->
-    <uses-permission android:name="android.permission.READ_LOGS" />
+
 
     <application
         android:allowBackup="true"
@@ -25,10 +25,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" >
 
-
         </activity>
         <activity android:name=".ui.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".ui.SeeWeekNews" />
@@ -40,11 +43,7 @@
         </activity>
         <activity android:name=".ui.SavedActivity" />
         <activity android:name=".ui.RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".ui.GroupingActivity" />

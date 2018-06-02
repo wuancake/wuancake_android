@@ -50,7 +50,7 @@
             android:orientation="horizontal"
             android:gravity="center"
             >
-            <TextView
+            <Button
                 android:id="@+id/WebGroup"
                 android:layout_height="70dp"
                 android:layout_width="120dp"
@@ -66,7 +66,7 @@
                 android:textColor="@color/text_black"
                 android:textSize="22sp"
                 android:paddingTop="0dp"/>
-            <TextView
+            <Button
                 android:id="@+id/PhpGroup"
                 android:layout_height="70dp"
                 android:layout_width="120dp"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
                 android:id="@+id/JavaGroup"
                 android:layout_width="120dp"
                 android:layout_height="70dp"
@@ -100,13 +100,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bk_group_card"
-                android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:paddingTop="0dp"
                 android:text="Java组"
                 android:textColor="@color/text_black"
                 android:textSize="22sp" />
-            <TextView
+            <Button
                 android:id="@+id/UiGroup"
                 android:layout_width="120dp"
                 android:layout_height="70dp"
@@ -116,9 +114,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bk_group_card"
-                android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:paddingTop="0dp"
                 android:text="UI组"
                 android:textColor="@color/text_black"
                 android:textSize="22sp" />
@@ -131,7 +127,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             >
-            <TextView
+            <Button
                 android:id="@+id/PmGroup"
                 android:layout_height="70dp"
                 android:layout_width="120dp"
@@ -148,7 +144,7 @@
                 android:textColor="@color/text_black"
                 android:textSize="22sp"
                 android:paddingTop="0dp"/>
-            <TextView
+            <Button
                 android:id="@+id/AndroidGroup"
                 android:layout_height="70dp"
                 android:layout_width="120dp"
@@ -160,26 +156,13 @@
                 android:background="@drawable/bk_group_card"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:text="Android组"
+                android:text="安卓组"
                 android:textColor="@color/text_black"
                 android:textSize="22sp"
                 android:paddingTop="0dp"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/SubmitGroup"
-            android:layout_height="61dp"
-            android:layout_width="330dp"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bk_group_card"
-            android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
-            android:text="提交"
-            android:backgroundTint="@color/button_blue"
-            android:textColor="@color/text_black"
-            android:textSize="22sp"
-            android:paddingTop="0dp"/>
+
     </LinearLayout>
 </LinearLayout>
 
