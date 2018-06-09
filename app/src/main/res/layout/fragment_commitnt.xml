@@ -44,15 +44,18 @@
 
         </LinearLayout>
 
-        <com.example.administrator.wuanandroid.utils.CountDownView
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            countdown:text_size="60"
-            android:id="@+id/commitnt_csv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <TextView
 
-        </com.example.administrator.wuanandroid.utils.CountDownView>
+            android:layout_gravity="center"
+            android:text="xx:xx:Xx:Xx"
+            android:id="@+id/commitnt_timer"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 

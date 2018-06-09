@@ -13,9 +13,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <!-- 读取log日志 -->
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,31 +22,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
-
-        </activity>
-        <activity android:name=".ui.LoginActivity" >
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.SeeWeekNews" />
         <activity
             android:name=".ui.WriteActivity"
             android:label="@string/title_activity_write"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity android:name=".ui.SavedActivity" />
-        <activity android:name=".ui.RegisterActivity">
-
-        </activity>
-
+        <activity android:name=".ui.RegisterActivity"></activity>
         <activity android:name=".ui.GroupingActivity" />
-        <activity android:name=".ui.LeaveActivity"></activity>
+        <activity android:name=".ui.LeaveActivity" />
+        <activity android:name=".ui.SeeNewsActivity"></activity>
     </application>
 
 </manifest>

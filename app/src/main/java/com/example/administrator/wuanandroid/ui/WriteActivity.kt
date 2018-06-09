@@ -13,6 +13,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsRequest
 import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsResponse
+import com.example.administrator.wuanandroid.MainActivity
 import com.example.administrator.wuanandroid.utils.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -24,7 +25,7 @@ class WriteActivity : AppCompatActivity() {
     var week_overEdit:String? = null
     var week_helpEdit:String? = null
     var next_weekEdit:String? = null
-    var  urlEdit:String? = null
+    var  urlEdit:String= "."
     var util = SharedUtil()
     var l = L()
     var t = ToastUtil(this@WriteActivity)
@@ -38,16 +39,14 @@ class WriteActivity : AppCompatActivity() {
 
     private fun initView() {
         write_back.setOnClickListener(View.OnClickListener { finish() })
-        write_save.setOnClickListener(View.OnClickListener {
-            getWeekText()
-            if (week_overEdit!!.length < 1 || week_helpEdit!!.length < 1 || next_weekEdit!!.length < 1) {
-                Toast.makeText(this@WriteActivity, "必填项不能为空", Toast.LENGTH_SHORT).show()
-            } else {
-                saveWeekNews()
-                goMain(1)
-
-            }
-        })
+//        write_save.setOnClickListener(View.OnClickListener {
+//            getWeekText()
+//
+//                saveWeekNews()
+//                goMain(1)
+//
+//
+//        })
         write_set.setOnClickListener(View.OnClickListener {
             if (util.getString(this@WriteActivity, "week_over", "无") != null
                     &&
@@ -62,19 +61,15 @@ class WriteActivity : AppCompatActivity() {
                 )
             }
             getWeekText()
-            if (week_overEdit!!.length < 1 || week_helpEdit!!.length < 1 || next_weekEdit!!.length < 1) {
-                Toast.makeText(this@WriteActivity, "必填项不能为空", Toast.LENGTH_SHORT).show()
-            } else {
-                tijiao(week_overEdit, week_helpEdit, next_weekEdit, urlEdit)
-            }
         })
     }
 
     fun getWeekText() {
         var week_overEdit = week_over.text.toString()
         var week_helpEdit = week_help.text.toString()
-        var next_weekEdit = week_help.text.toString()
+        var next_weekEdit = week_next.text.toString()
         var  urlEdit = url.text.toString()
+        tijiao(week_overEdit, week_helpEdit, next_weekEdit, urlEdit)
     }
 
     private fun tijiao(week_over: String?, week_help: String?, next_week: String?, url: String?) {
@@ -85,7 +80,7 @@ class WriteActivity : AppCompatActivity() {
         request.complete = week_overEdit + "<br>"
         request.trouble = week_helpEdit + "<br>"
         request.plane = next_weekEdit + "<br>"
-        request.url = urlEdit
+        request.url = urlEdit+"<br>"
         val gson = Gson()
         var route = gson.toJson(request)
         //封装请求体
@@ -93,27 +88,30 @@ class WriteActivity : AppCompatActivity() {
         RequestUtil.observable.ISetWeekNews(body)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe{
+                .subscribe({
                     SetNewsResponse ->
+                    l.i("${SetNewsResponse.infoCode}"+"提交周报")
                     when(SetNewsResponse.infoCode){
                         200 -> goMain(2)
-                        500 -> goMain(3)
                     }
-                }
+                },{
+                    error -> Toast.makeText(this@WriteActivity, "服务器出现错误", Toast.LENGTH_SHORT).show()
+                })
     }
 
     private fun saveWeekNews() {
-        if (week_over.length() < 1 || week_help.length() < 1 || next_week.length() < 1) {
+        if (week_over.text == null || week_help.text == null || week_next.text == null) {
             Toast.makeText(this@WriteActivity, "必填项不能为空", Toast.LENGTH_SHORT).show()
         } else {
-            util.putString(this@WriteActivity, "week_over", "${week_over.text}<br>")
-            util.putString(this@WriteActivity, "week_help", "${week_help.text}<br>")
-            util.putString(this@WriteActivity, "next_week", "${next_week.text}<br>")
-            util.putString(this@WriteActivity, "url", "${url.text}<br>")
+            util.putString(this@WriteActivity, "week_over", "${week_over!!.text}<br>")
+            util.putString(this@WriteActivity, "week_help", "${week_help!!.text}<br>")
+            util.putString(this@WriteActivity, "next_week", "${week_next!!.text}<br>")
+            util.putString(this@WriteActivity, "url", "${url!!.text}<br>")
             val intent = Intent(this@WriteActivity, SavedActivity::class.java)
         }
     }
     private fun goMain(isUpData : Int){
+        var intent = Intent(this@WriteActivity,MainActivity::class.java)
         intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY, 1)
         startActivity(intent)
     }

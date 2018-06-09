@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid.localAPI
 
+import com.example.administrator.wuanandroid.Bean.CancelLeaveBean.CancelResponse
 import com.example.administrator.wuanandroid.Bean.GroupBean.GroupResponse
 import com.example.administrator.wuanandroid.Bean.LeaveBean.LeaveResponse
 import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean
@@ -27,33 +28,39 @@ interface IApi {
     fun login(@Body LoginBody: RequestBody): Observable<LoginResultBean>
 
     //主页
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/main")
     fun IStatus(@Body id: RequestBody): Observable<StatusBean>
 
     //查看周报
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/myweekly")
-    fun ISeeWeek(@Body route: String): Observable<SeeWeekResponse>
+    fun ISeeWeek(@Body route: RequestBody): Observable<SeeWeekResponse>
 
     //提交周报
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/submit")
     fun ISetWeekNews(@Body route: RequestBody): Observable<SetNewsResponse>
 
     //注册账号
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/regist")
     fun IRegister(@Body route: RequestBody): Observable<RegisterResponse>
 
     //选择分组
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/group")
     fun IGroup(@Body route: RequestBody): Observable<GroupResponse>
 
     //请假
-    @Headers("Content-type:application/json;charset=utf-8", "Accept:application/json")
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/leave")
     fun ILeave(@Body route: RequestBody): Observable<LeaveResponse>
+
+
+    //请假
+    @Headers("Content-Type: application/json;charset=UTF-8")
+    @POST("/cancelLeave")
+    fun ICanceLeave(@Body route: RequestBody): Observable<CancelResponse>
 
 }

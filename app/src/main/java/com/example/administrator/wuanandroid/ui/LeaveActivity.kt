@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,10 +13,7 @@ import com.example.administrator.wuanandroid.Bean.LeaveBean.LeaveResponse
 
 import com.example.administrator.wuanandroid.MainActivity
 import com.example.administrator.wuanandroid.R
-import com.example.administrator.wuanandroid.utils.RequestUtil
-import com.example.administrator.wuanandroid.utils.SharedUtil
-import com.example.administrator.wuanandroid.utils.StaticClass
-import com.example.administrator.wuanandroid.utils.ToastUtil
+import com.example.administrator.wuanandroid.utils.*
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -31,6 +29,7 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
     private var weekamount = 0
     var sharedUtil  = SharedUtil()
     var t = ToastUtil(this@LeaveActivity)
+    var l = L()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,15 +39,36 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
         btnLeaveWeekAmount2.setOnClickListener(this)
         btnLeaveWeekAmount3.setOnClickListener(this)
         btnLeaveSubmit.setOnClickListener(this)
-
+        tvWeekNumber.text = sharedUtil.getInt(this@LeaveActivity,StaticClass.WEEK_NUM,1).toString()+"周"
     }
 
+
+    @SuppressLint("ResourceAsColor")
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnLeaveReturn -> leaveToMain()
-            R.id.btnLeaveWeekAmount1 -> weekamount = 1
-            R.id.btnLeaveWeekAmount2 -> weekamount = 2
-            R.id.btnLeaveWeekAmount3 -> weekamount = 3
+            R.id.btnLeaveWeekAmount1 -> {
+                weekamount = 1
+                btnLeaveWeekAmount1.setBackgroundColor(R.color.levae_item_select)
+                btnLeaveWeekAmount2.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount3.setBackgroundColor(R.color.leave_text_blue)
+                l.d("1")
+            }
+            R.id.btnLeaveWeekAmount2 ->{
+                weekamount = 2
+                btnLeaveWeekAmount1.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount2.setBackgroundColor(R.color.levae_item_select)
+                btnLeaveWeekAmount3.setBackgroundColor(R.color.leave_text_blue)
+                l.d("2")
+            }
+            R.id.btnLeaveWeekAmount3 -> {
+                weekamount = 3
+                btnLeaveWeekAmount1.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount2.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount3.setBackgroundColor(R.color.levae_item_select)
+                l.d("3")
+            }
+
             R.id.btnLeaveSubmit -> btnLeaveSubmit()
         }
     }

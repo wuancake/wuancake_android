@@ -21,6 +21,14 @@ object StaticClass {
     val WUAN_URL = "http://13.114.107.36:8008"
     //    public static final String WUAN_URL = "http://ericheel.free.ngrok.cc";
 
+    //当前周数Shared
+    val WEEK_NUM = "weekNumber"
+
+    //账号密码
+    val USER_ACCOUNT = "userAccount"
+    val USER_PASSWORD = "userPassword"
+    val ISREMEBER = "keepword"
+
     //是否提交周报
     val IS_UPDATANEEWS_KEY = "isUpData"
     //    SharedKey
@@ -28,5 +36,5 @@ object StaticClass {
     val GROUP_ID = "Group_key"
     //    public static final String  = "Group_key";
 
-
+    val TIMER_TIME : Long = 604800000;
 }

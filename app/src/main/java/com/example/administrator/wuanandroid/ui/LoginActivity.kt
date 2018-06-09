@@ -6,9 +6,9 @@ import android.os.Bundle
 
 import android.text.TextUtils
 import android.view.View
+import android.widget.CompoundButton
 
 import android.widget.Toast
-
 import com.example.administrator.wuanandroid.Bean.LoginBean.LoginRequestBean
 
 import com.example.administrator.wuanandroid.MainActivity
@@ -45,14 +45,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     val l: L = L()
     val sharedUtil: SharedUtil = SharedUtil()
-
+    var isRemeber :String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         login_login.setOnClickListener(this)
         login_register.setOnClickListener(this)
-
+        var isRemeber = sharedUtil.getString(this@LoginActivity,StaticClass.ISREMEBER,"0")
+        l.d("$isRemeber")
+        login_remeber.setChecked(isRemeber.equals("1"))
+        if(isRemeber.equals("1")){
+            login_account.setText(sharedUtil.getString(this@LoginActivity,StaticClass.USER_ACCOUNT,""))
+            login_password.setText(sharedUtil.getString(this@LoginActivity,StaticClass.USER_PASSWORD,""))
+        }
     }
 
     private fun toLogin(accountStr: String, passwordStr: String) {
@@ -66,21 +72,36 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         RequestUtil.observable.login(body)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe { loginResultBean ->
-                    when (loginResultBean.infoCode) {
-                        "500" -> {
-                            l.d("Login500")
-                            Toast.makeText(this@LoginActivity, "服务器出现错误", Toast.LENGTH_SHORT).show()
-                        }
-                        "200" -> {
+                .subscribe ({ LoginRsultBean ->
+                    when (LoginRsultBean.infoCode) {
+                        200 -> {
+                            l.i("${login_remeber.isChecked}")
+                            if(isRemeber.equals("0")){
+                                sharedUtil.putString(this@LoginActivity,StaticClass.ISREMEBER,"0")
+                            }else{
+                                sharedUtil.putString(this@LoginActivity,StaticClass.ISREMEBER,"1")
+                            }
+                            sharedUtil.putInt(this@LoginActivity,StaticClass.USER_ID,LoginRsultBean.userId)
+                            sharedUtil.putString(this@LoginActivity,StaticClass.USER_ACCOUNT,accountStr)
+                            sharedUtil.putString(this@LoginActivity,StaticClass.USER_PASSWORD,passwordStr)
                             l.d("Login200")
-                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                            sharedUtil.putInt(this@LoginActivity, StaticClass.USER_ID, loginResultBean.user_id)
-                            sharedUtil.putInt(this@LoginActivity, StaticClass.GROUP_ID, loginResultBean.group_id)
+                            if(LoginRsultBean.groupId == 0){
+                                startActivity(Intent(this@LoginActivity,GroupingActivity::class.java))
+                                finish()
+                            }else{
+                                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                finish()
+                            }
                         }
                         else -> Toast.makeText(this@LoginActivity, "出现未知错误", Toast.LENGTH_SHORT).show()
                     }
-                }
+
+
+
+                },{
+                    error->Toast.makeText(this@LoginActivity, "账号或密码不正确，请重试", Toast.LENGTH_SHORT).show()
+
+                })
 
 
     }

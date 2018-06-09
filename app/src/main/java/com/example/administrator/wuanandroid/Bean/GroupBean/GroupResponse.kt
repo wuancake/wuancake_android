@@ -10,7 +10,7 @@ class GroupResponse {
      */
 
     var infoText: String? = null
-    var infoCode: Int = 0
-    var userId: Int = 0
-    var groupId: Int = 0
+    var infoCode: Int? = 0
+    var userId: Int? = 0
+    var groupId: Int? = 0
 }

@@ -1,90 +1,56 @@
 package com.example.administrator.wuanandroid.Bean.SeeWeekBean
 
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import android.os.Parcel
+import android.os.Parcelable
 
-import org.json.JSONException
-import org.json.JSONObject
-
-import java.lang.reflect.Type
-import java.util.ArrayList
-
-/**
- * 项目名：   WuanAndroid
- * 包名 ：    com.example.administrator.wuanandroid.Bean.SeeWeekBean
- * 文件名：   Response
- * 创建者:    Nixo
- * 创建时间：  2018/4/5/005-13:41
- * 描述：
- */
-
-class SeeWeekResponse {
+class SeeWeekResponse() :Parcelable{
 
 
     /**
-     * weekNum : 117
-     * complete : 削了XXX知识
-     * trouble : 本周遇到的困难
-     * plane : 下周准备学习xxx
-     * url : http://github.com
-     * infoText : 成功返回周报
-     * infoCode : 200
+     * reports : [{"weekNum":20,"userId":5,"groupId":1,"text":"啊啊啊啊啊啊啊啊<br></br>飒飒撒大所大所大所<br></br>","status":2,"replyTime":"2018-05-21T03:44:09.000+0000"},{"weekNum":21,"userId":5,"groupId":1,"text":"啊啊啊啊啊啊啊啊<br></br>","status":2,"replyTime":"2018-05-21T03:44:09.000+0000"},{"weekNum":22,"userId":5,"groupId":1,"text":"啊啊啊啊啊啊啊啊<br></br>","status":2,"replyTime":"2018-05-21T03:44:09.000+0000"},{"weekNum":23,"userId":5,"groupId":1,"text":"啊啊啊啊啊啊啊啊<br></br>","status":2,"replyTime":"2018-05-21T03:44:09.000+0000"},{"weekNum":24,"userId":5,"groupId":1,"text":"啊啊啊啊啊啊啊啊<br></br>","status":2,"replyTime":"2018-05-21T03:44:09.000+0000"}]
+     * count : 100
      */
 
-    var weekNum: Int = 0
-    var complete: String? = null
-    var trouble: String? = null
-    var plane: String? = null
-    var url: String? = null
-    var infoText: String? = null
-    var infoCode: Int = 0
+    var count: Int = 0
+    var reports: List<ReportsBean>? = null
 
-    companion object {
+    constructor(parcel: Parcel) : this() {
+        count = parcel.readInt()
+    }
 
-        fun objectFromData(str: String): SeeWeekResponse {
+    class ReportsBean {
+        /**
+         * weekNum : 20
+         * userId : 5
+         * groupId : 1
+         * text : 啊啊啊啊啊啊啊啊<br></br>飒飒撒大所大所大所<br></br>
+         * status : 2
+         * replyTime : 2018-05-21T03:44:09.000+0000
+         */
 
-            return Gson().fromJson(str, SeeWeekResponse::class.java)
+        var weekNum: Int = 0
+        var userId: Int = 0
+        var groupId: Int = 0
+        var text: String? = null
+        var status: Int = 0
+        var replyTime: String? = null
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(count)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<SeeWeekResponse> {
+        override fun createFromParcel(parcel: Parcel): SeeWeekResponse {
+            return SeeWeekResponse(parcel)
         }
 
-        fun objectFromData(str: String, key: String): SeeWeekResponse? {
-
-            try {
-                val jsonObject = JSONObject(str)
-
-                return Gson().fromJson(jsonObject.getString(str), SeeWeekResponse::class.java)
-            } catch (e: JSONException) {
-                e.printStackTrace()
-            }
-
-            return null
-        }
-
-        fun arrayResponseFromData(str: String): List<SeeWeekResponse>? {
-
-            val listType = object : TypeToken<ArrayList<SeeWeekResponse>>() {
-
-            }.type
-
-            return Gson().fromJson<List<SeeWeekResponse>>(str, listType)
-        }
-
-        fun arrayResponseFromData(str: String, key: String): List<SeeWeekResponse>? {
-
-            try {
-                val jsonObject = JSONObject(str)
-                val listType = object : TypeToken<ArrayList<SeeWeekResponse>>() {
-
-                }.type
-
-                return Gson().fromJson<List<SeeWeekResponse>>(jsonObject.getString(str), listType)
-
-            } catch (e: JSONException) {
-                e.printStackTrace()
-            }
-
-            return ArrayList()
-
-
+        override fun newArray(size: Int): Array<SeeWeekResponse?> {
+            return arrayOfNulls(size)
         }
     }
 }
