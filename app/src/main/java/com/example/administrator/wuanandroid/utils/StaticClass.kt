@@ -35,6 +35,9 @@ object StaticClass {
     val USER_ID = "User_key"
     val GROUP_ID = "Group_key"
     //    public static final String  = "Group_key";
-
+    //倒计时一周时间
     val TIMER_TIME : Long = 604800000;
+    //是否保存周报判断
+    var isSave = false
+
 }

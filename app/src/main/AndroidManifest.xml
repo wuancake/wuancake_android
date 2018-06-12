@@ -22,7 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+             />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,12 +36,13 @@
         <activity
             android:name=".ui.WriteActivity"
             android:label="@string/title_activity_write"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".ui.SavedActivity" />
-        <activity android:name=".ui.RegisterActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.GroupingActivity" />
         <activity android:name=".ui.LeaveActivity" />
-        <activity android:name=".ui.SeeNewsActivity"></activity>
+        <activity android:name=".ui.SeeNewsActivity" />
+        <activity android:name=".ui.SeeweekleaveActivity"></activity>
     </application>
 
 </manifest>

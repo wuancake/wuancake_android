@@ -33,7 +33,7 @@ class SeeAdapter(context:Context , list:ArrayList<SeeWeekResponse.ReportsBean> ,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var bean = list[position]
-        holder.week.text = "${bean.weekNum}"
+        holder.week.text = "第${bean.weekNum}周"
         holder.itemView.setOnClickListener(this)
         holder.itemView.tag = bean
     }

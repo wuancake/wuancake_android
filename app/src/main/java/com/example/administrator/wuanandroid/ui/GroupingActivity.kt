@@ -3,7 +3,13 @@ package com.example.administrator.wuanandroid.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
+import com.example.administrator.wuanandroid.Adapter.GroupAdapter
+import com.example.administrator.wuanandroid.Adapter.GroupItemClickListener
+import com.example.administrator.wuanandroid.Bean.GroupBean.AllGroupBean
 import com.example.administrator.wuanandroid.Bean.GroupBean.GroupRequest
 import com.example.administrator.wuanandroid.Bean.GroupBean.GroupResponse
 import com.example.administrator.wuanandroid.MainActivity
@@ -17,39 +23,57 @@ import kotlinx.android.synthetic.main.activity_grouping.*
 import okhttp3.RequestBody
 
 
-class GroupingActivity : AppCompatActivity(), View.OnClickListener {
+class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClickListener {
+    override fun ClickListner(id: Int) {
+        group_id = id
+        l.i("$group_id")
+    }
 
     private var group_id: Int = 0
     private var sharedUtil = SharedUtil()
     private var toast = ToastUtil(this)
     private var l = L()
+    private var t = ToastUtil(this@GroupingActivity)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grouping)
-        initView()
+        getGroupList()
+        group_marge.setOnClickListener(this)
+
     }
 
-    private fun initView() {
-        WebGroup.setOnClickListener(this)
-        PhpGroup.setOnClickListener(this)
-        JavaGroup.setOnClickListener(this)
-        UiGroup.setOnClickListener(this)
-        PmGroup.setOnClickListener(this)
-        AndroidGroup.setOnClickListener(this)
+    fun getGroupList(){
+        RequestUtil.observable.getAllGroup()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe ({
+                    AllGroupBean->
+                    var list = ArrayList<AllGroupBean.GroupsBean>()
+                    l.i("执行了")
+                    for (item in AllGroupBean.groups!!){list.add(item) }
+                    var manager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                    var adapter = GroupAdapter(this@GroupingActivity,list,this)
+                    group_recycler.layoutManager = manager
+                    group_recycler.adapter = adapter
 
+                },{
+                    t.st("发生${it.message}错误")
+        })
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.WebGroup -> group_id = 1
-            R.id.PhpGroup -> group_id =2
-            R.id.JavaGroup -> group_id = 3
-            R.id.UiGroup -> group_id = 4
-            R.id.PmGroup -> group_id = 5
-            R.id.AndroidGroup -> group_id = 6
+            R.id.group_marge-> {
+                if(group_id == 0){
+                    t.st("请选择分组")
+                }else{
+                    netRequest()
+                }
+
+            }
         }
-        netRequest()
     }
 
 

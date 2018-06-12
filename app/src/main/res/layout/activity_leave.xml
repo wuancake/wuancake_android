@@ -99,7 +99,8 @@
                 android:textColor="@color/leave_text_black"
                 android:textSize="19sp" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/btnLeaveWeekAmount1"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
@@ -109,7 +110,8 @@
                 android:textColor="@color/leave_text_white"
                  />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/btnLeaveWeekAmount2"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
@@ -119,7 +121,8 @@
                 android:textColor="@color/leave_text_white"
                  />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/btnLeaveWeekAmount3"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
@@ -136,6 +139,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:text="请假理由（必填）"
+
             android:textColor="@color/leave_text_blue"
             android:textSize="19sp" />
 

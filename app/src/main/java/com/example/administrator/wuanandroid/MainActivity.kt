@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process.myPid
 import android.view.Gravity
 import android.view.MenuItem
 import com.example.administrator.wuanandroid.Bean.StatusBean.StatusRequestBean
@@ -13,11 +14,9 @@ import com.example.administrator.wuanandroid.fragment.ComitedFragment
 import com.example.administrator.wuanandroid.fragment.ComitntFragment
 import com.example.administrator.wuanandroid.fragment.InternetFail
 import com.example.administrator.wuanandroid.fragment.LeaveFragment
+import com.example.administrator.wuanandroid.ui.BaseActivity
 import com.example.administrator.wuanandroid.ui.SeeWeekNews
-import com.example.administrator.wuanandroid.utils.L
-import com.example.administrator.wuanandroid.utils.RequestUtil
-import com.example.administrator.wuanandroid.utils.SharedUtil
-import com.example.administrator.wuanandroid.utils.StaticClass
+import com.example.administrator.wuanandroid.utils.*
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -65,7 +64,9 @@ class MainActivity : AppCompatActivity() {
             when(item.itemId){
                 R.id.nav_myNews -> { startActivity(Intent(this@MainActivity, SeeWeekNews::class.java)) }
                 R.id.nav_main -> mDrawerLayout!!.closeDrawer(nav_view)
-                R.id.nav_exit -> System.exit(0)
+                R.id.nav_exit -> {
+//                    BaseActivity().getac().finishAll()
+                }
 
             }
             true

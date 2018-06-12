@@ -1,6 +1,7 @@
 package com.example.administrator.wuanandroid.localAPI
 
 import com.example.administrator.wuanandroid.Bean.CancelLeaveBean.CancelResponse
+import com.example.administrator.wuanandroid.Bean.GroupBean.AllGroupBean
 import com.example.administrator.wuanandroid.Bean.GroupBean.GroupResponse
 import com.example.administrator.wuanandroid.Bean.LeaveBean.LeaveResponse
 import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean
@@ -12,6 +13,7 @@ import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsResponse
 import io.reactivex.Observable
 import okhttp3.RequestBody
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
 
@@ -62,5 +64,9 @@ interface IApi {
     @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/cancelLeave")
     fun ICanceLeave(@Body route: RequestBody): Observable<CancelResponse>
+
+    //获取全部分组
+    @GET("/findAllGroupInfo")
+    fun getAllGroup(): Observable<AllGroupBean>
 
 }

@@ -55,7 +55,7 @@ class SavedActivity : AppCompatActivity() {
         override fun run() {
             super.run()
             try {
-                Thread.sleep(4000)
+                Thread.sleep(3000)
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }

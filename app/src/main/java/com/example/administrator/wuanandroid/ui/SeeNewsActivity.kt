@@ -54,7 +54,12 @@ class SeeNewsActivity : AppCompatActivity() {
         }else if(desc.size == 4){
             week_over.setText(desc[0])
             week_help.setText(desc[1])
-            week_help.setText(desc[2])
+            week_next.setText(desc[2])
+            url.setText(desc[3])
+        }else{
+            week_over.setText(desc[0])
+            week_help.setText(desc[1])
+            week_next.setText(desc[2])
             url.setText(desc[3])
         }
 

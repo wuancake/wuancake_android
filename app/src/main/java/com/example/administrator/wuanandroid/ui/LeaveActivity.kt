@@ -2,6 +2,7 @@ package com.example.administrator.wuanandroid.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -43,29 +44,29 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    @SuppressLint("ResourceAsColor")
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnLeaveReturn -> leaveToMain()
             R.id.btnLeaveWeekAmount1 -> {
                 weekamount = 1
-                btnLeaveWeekAmount1.setBackgroundColor(R.color.levae_item_select)
-                btnLeaveWeekAmount2.setBackgroundColor(R.color.leave_text_blue)
-                btnLeaveWeekAmount3.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount1.setBackgroundColor(Color.parseColor("#B4EEB4"))
+                btnLeaveWeekAmount2.setBackgroundColor(Color.parseColor("#2f94ff"))
+                btnLeaveWeekAmount3.setBackgroundColor(Color.parseColor("#2f94ff"))
                 l.d("1")
             }
             R.id.btnLeaveWeekAmount2 ->{
                 weekamount = 2
-                btnLeaveWeekAmount1.setBackgroundColor(R.color.leave_text_blue)
-                btnLeaveWeekAmount2.setBackgroundColor(R.color.levae_item_select)
-                btnLeaveWeekAmount3.setBackgroundColor(R.color.leave_text_blue)
+                btnLeaveWeekAmount1.setBackgroundColor(Color.parseColor("#2f94ff"))
+                btnLeaveWeekAmount2.setBackgroundColor(Color.parseColor("#B4EEB4"))
+                btnLeaveWeekAmount3.setBackgroundColor(Color.parseColor("#2f94ff"))
                 l.d("2")
             }
             R.id.btnLeaveWeekAmount3 -> {
                 weekamount = 3
-                btnLeaveWeekAmount1.setBackgroundColor(R.color.leave_text_blue)
-                btnLeaveWeekAmount2.setBackgroundColor(R.color.leave_text_blue)
-                btnLeaveWeekAmount3.setBackgroundColor(R.color.levae_item_select)
+                btnLeaveWeekAmount1.setBackgroundColor(Color.parseColor("#2f94ff"))
+                btnLeaveWeekAmount2.setBackgroundColor(Color.parseColor("#2f94ff"))
+                btnLeaveWeekAmount3.setBackgroundColor(Color.parseColor("#B4EEB4"))
                 l.d("3")
             }
 

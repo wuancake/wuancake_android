@@ -24,10 +24,17 @@ import okhttp3.RequestBody
 
 class SeeWeekNews : AppCompatActivity() ,MainRecyClickListen{
     override fun MainRecyClickListener(bean: SeeWeekResponse.ReportsBean) {
-        var i = Intent(this@SeeWeekNews,SeeNewsActivity::class.java)
-        i.putExtra("1",bean.text)
-        i.putExtra("2",bean.weekNum)
-        startActivity(i)
+        if(bean.status == 2){
+            var i = Intent(this@SeeWeekNews,SeeNewsActivity::class.java)
+            i.putExtra("1",bean.text)
+            i.putExtra("2",bean.weekNum)
+            startActivity(i)
+        }else if(bean.status == 3){
+            var intent2 = Intent(this@SeeWeekNews,SeeweekleaveActivity::class.java)
+            intent2.putExtra("status",bean.status)
+            startActivity(Intent(intent2))
+        }
+
     }
 
 

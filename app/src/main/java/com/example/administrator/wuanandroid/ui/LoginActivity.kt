@@ -10,6 +10,7 @@ import android.widget.CompoundButton
 
 import android.widget.Toast
 import com.example.administrator.wuanandroid.Bean.LoginBean.LoginRequestBean
+import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean
 
 import com.example.administrator.wuanandroid.MainActivity
 import com.example.administrator.wuanandroid.R
@@ -28,7 +29,7 @@ import okhttp3.RequestBody
 
 
 import kotlinx.android.synthetic.main.activity_login.*
-
+import kotlinx.android.synthetic.main.activity_register.*
 
 
 /**
@@ -81,6 +82,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                             }else{
                                 sharedUtil.putString(this@LoginActivity,StaticClass.ISREMEBER,"1")
                             }
+                            sharedUtil.putInt(this@LoginActivity,StaticClass.GROUP_ID,LoginRsultBean.groupId)
                             sharedUtil.putInt(this@LoginActivity,StaticClass.USER_ID,LoginRsultBean.userId)
                             sharedUtil.putString(this@LoginActivity,StaticClass.USER_ACCOUNT,accountStr)
                             sharedUtil.putString(this@LoginActivity,StaticClass.USER_PASSWORD,passwordStr)
@@ -93,14 +95,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                                 finish()
                             }
                         }
-                        else -> Toast.makeText(this@LoginActivity, "出现未知错误", Toast.LENGTH_SHORT).show()
+                        500 -> Toast.makeText(this@LoginActivity, "${LoginRsultBean.infoText}", Toast.LENGTH_SHORT).show()
                     }
 
 
 
-                },{
-                    error->Toast.makeText(this@LoginActivity, "账号或密码不正确，请重试", Toast.LENGTH_SHORT).show()
-
+                }, {
+                    l.i("${it.message}")
                 })
 
 

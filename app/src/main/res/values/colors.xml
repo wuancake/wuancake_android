@@ -19,4 +19,5 @@
     <color name="leave_button_blue">#ffffff</color>
     <color name="leave_edit_white">#e2e3ef</color>
     <color name="levae_item_select">#FFA07A</color>
+    <color name="item.clicked">#37c6c0</color>
 </resources>

@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_register.*
 import okhttp3.RequestBody
 
-class RegisterActivity : AppCompatActivity(), View.OnClickListener {
+class RegisterActivity :AppCompatActivity(), View.OnClickListener {
 
     var l = L()
     var sharedUtil = SharedUtil()
