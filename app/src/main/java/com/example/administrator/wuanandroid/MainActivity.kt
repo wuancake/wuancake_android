@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             supportActionBar!!.setHomeAsUpIndicator(R.mipmap.opendrawer)
         }
-//                intoFragment(2)
-        RequestToStatus()
+                intoFragment("1")
+//        RequestToStatus()
     }
 
     private fun intoFragment(status: String?) {

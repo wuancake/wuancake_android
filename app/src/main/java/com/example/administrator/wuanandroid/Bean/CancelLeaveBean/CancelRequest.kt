@@ -7,4 +7,5 @@ class CancelRequest {
      */
 
     var userId: Int = 0
+    var groupId : Int = 0
 }

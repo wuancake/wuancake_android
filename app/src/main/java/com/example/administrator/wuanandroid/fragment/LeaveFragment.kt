@@ -40,6 +40,7 @@ class LeaveFragment : Fragment() {
             val g : Gson = Gson()
             var sb = CancelRequest()
             sb.userId = sharedUtil.getInt(this!!.activity!!,StaticClass.USER_ID,1)
+            sb.groupId = sharedUtil.getInt(this!!.activity!!,StaticClass.GROUP_ID,1)
             var route = g.toJson(sb)
             val body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route.toString())
             RequestUtil.observable.ICanceLeave(body)

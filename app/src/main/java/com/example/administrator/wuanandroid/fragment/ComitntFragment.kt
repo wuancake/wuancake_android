@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 import com.example.administrator.wuanandroid.R
+import com.example.administrator.wuanandroid.mView.WaveViewByBezier
 import com.example.administrator.wuanandroid.ui.LeaveActivity
 import com.example.administrator.wuanandroid.ui.WriteActivity
 import com.example.administrator.wuanandroid.utils.CountDownUtil
@@ -31,6 +32,8 @@ class ComitntFragment : Fragment() {
 
     val l = L()
     val sharedUtil = SharedUtil()
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.fragment_commitnt, container, false)
         var mComitntTimer = view.commitnt_timer
@@ -41,6 +44,11 @@ class ComitntFragment : Fragment() {
         Commitnt_Week.text = sharedUtil.getInt(this!!.activity!!,StaticClass.WEEK_NUM,1).toString()+"周"
         commit.setOnClickListener {startActivity(Intent(activity, WriteActivity::class.java)) } // 跳转到提交周报
         commitLeave.setOnClickListener {startActivity(Intent(activity,LeaveActivity::class.java))}// 跳转到请假
+
+
         return view
     }
+
+
+
 }
