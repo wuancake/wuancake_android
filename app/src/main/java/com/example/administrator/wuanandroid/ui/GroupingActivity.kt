@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid.ui
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -34,22 +35,26 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
     private var toast = ToastUtil(this)
     private var l = L()
     private var t = ToastUtil(this@GroupingActivity)
-
+    var dialog :Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grouping)
         getGroupList()
         group_marge.setOnClickListener(this)
-
+        dialog = DialogUtil(this@GroupingActivity).getLoaddingDialog()
     }
 
     fun getGroupList(){
+        dialog!!.show()
+        dialog!!.setCancelable(false)
         RequestUtil.observable.getAllGroup()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe ({
+
                     AllGroupBean->
+                    dialog!!.dismiss()
                     var list = ArrayList<AllGroupBean.GroupsBean>()
                     l.i("执行了")
                     for (item in AllGroupBean.groups!!){list.add(item) }
@@ -59,6 +64,7 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
                     group_recycler.adapter = adapter
 
                 },{
+                    dialog!!.dismiss()
                     t.st("发生${it.message}错误")
         })
     }
@@ -78,6 +84,7 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
 
 
     private fun netRequest() {
+        dialog!!.show()
         var gr = GroupRequest()
         gr.userId = sharedUtil.getInt(this@GroupingActivity,StaticClass.USER_ID,1)
         gr.groupId = group_id
@@ -89,6 +96,7 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
                 .subscribeOn(Schedulers.io())
                 .subscribe{
                     GroupResponse ->
+                    dialog!!.dismiss()
                     when(GroupResponse.infoCode){
                         200 -> {
                             sharedUtil.putInt(this@GroupingActivity,StaticClass.USER_ID, GroupResponse.userId!!)

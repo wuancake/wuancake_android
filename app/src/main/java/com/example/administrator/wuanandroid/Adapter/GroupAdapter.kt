@@ -1,13 +1,11 @@
 package com.example.administrator.wuanandroid.Adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.example.administrator.wuanandroid.Bean.GroupBean.AllGroupBean
-import com.example.administrator.wuanandroid.Bean.SeeWeekBean.SeeWeekResponse
 import com.example.administrator.wuanandroid.R
 import com.example.administrator.wuanandroid.utils.layoutInflater
 import kotlinx.android.synthetic.main.item_see.view.*

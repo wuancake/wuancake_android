@@ -1,9 +1,12 @@
 package com.example.administrator.wuanandroid.ui
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.example.administrator.wuanandroid.R
 import com.google.gson.Gson
@@ -14,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsRequest
 import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsResponse
 import com.example.administrator.wuanandroid.MainActivity
+import com.example.administrator.wuanandroid.mView.mLoaddingDialog
 import com.example.administrator.wuanandroid.utils.*
 import com.example.administrator.wuanandroid.utils.StaticClass.isSave
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -26,10 +30,17 @@ import kotlinx.android.synthetic.main.content_xd.*
  * isSave在Static.kt中 判断是否保存周报
  */
 class WriteActivity : AppCompatActivity() ,View.OnClickListener{
+
+
+
+
+
     override fun onClick(v: View) {
         when(v.id){
             R.id.write_back ->finish()
             R.id.write_set ->{
+                dialog!!.show()
+                dialog!!.setCancelable(false)
                 getWeekText()
                 if(week_overEdit.isEmpty() ||week_helpEdit.isEmpty() || next_weekEdit.isEmpty()){
                     t.st("必填项不能为空")
@@ -42,20 +53,16 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
 
             }
             R.id.write_save ->{
-                getWeekText()
-                if(week_overEdit.isEmpty() ||week_helpEdit.isEmpty() || next_weekEdit.isEmpty()){
-                    t.st("必填项不能为空")
-                }else {
                     saveWeekText(week_overEdit!!, week_helpEdit!!, next_weekEdit!!, urlEdit)
                     var intent = Intent(this@WriteActivity, SavedActivity::class.java)
                     intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY, 1)
                     startActivity(intent)
-                }
+
             }
         }
     }
 
-
+    var dialog : Dialog? = null
     var week_overEdit:String = ""
     var week_helpEdit:String = ""
     var next_weekEdit:String =""
@@ -63,6 +70,9 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
     var util = SharedUtil()
     var l = L()
     var t = ToastUtil(this@WriteActivity)
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write)
@@ -72,6 +82,8 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
         write_set.setOnClickListener(this)
         write_save.setOnClickListener(this)
         ReSetWeekText(isSave)
+        dialog = DialogUtil(this@WriteActivity).getLoaddingDialog()
+
     }
 
     fun ReSetWeekText(isSaved : Boolean){
@@ -124,12 +136,15 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
                 .subscribeOn(Schedulers.io())
                 .subscribe({
                     SetNewsResponse ->
-                    l.i("${SetNewsResponse.infoCode}"+"提交周报")
-                    l.i("${SetNewsResponse.infoText}")
+                    dialog!!.dismiss()
+//                    l.i("${SetNewsResponse.infoCode}"+"提交周报")
+//                    l.i("${SetNewsResponse.infoText}")
                     when(SetNewsResponse.infoCode){
                         200 -> goMain(2)
+                        500 -> t.st("${SetNewsResponse.infoText}")
                     }
                 },{
+                    dialog!!.dismiss()
                     var intent = Intent(this@WriteActivity,SavedActivity::class.java)
                     intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY,2)
                     startActivity(intent)
@@ -137,17 +152,15 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     private fun saveWeekNews() {
-        if (week_over.text == null || week_help.text == null || week_next.text == null) {
-            Toast.makeText(this@WriteActivity, "必填项不能为空", Toast.LENGTH_SHORT).show()
-        } else {
             util.putString(this@WriteActivity, "week_over", "${week_over!!.text}<br>")
             util.putString(this@WriteActivity, "week_help", "${week_help!!.text}<br>")
             util.putString(this@WriteActivity, "next_week", "${week_next!!.text}<br>")
             util.putString(this@WriteActivity, "url", "${url!!.text}<br>")
             val intent = Intent(this@WriteActivity, SavedActivity::class.java)
-        }
+
     }
     private fun goMain(isUpData : Int){
+
         var intent = Intent(this@WriteActivity,MainActivity::class.java)
         intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY, 1)
         startActivity(intent)

@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid
 
+import android.app.Dialog
 import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -15,6 +16,7 @@ import com.example.administrator.wuanandroid.fragment.ComitntFragment
 import com.example.administrator.wuanandroid.fragment.InternetFail
 import com.example.administrator.wuanandroid.fragment.LeaveFragment
 import com.example.administrator.wuanandroid.ui.BaseActivity
+import com.example.administrator.wuanandroid.ui.LoginActivity
 import com.example.administrator.wuanandroid.ui.SeeWeekNews
 import com.example.administrator.wuanandroid.utils.*
 import com.google.gson.Gson
@@ -28,10 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     val l : L = L()
     val sharedUtil : SharedUtil = SharedUtil()
-
+    var dialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        dialog = DialogUtil(this@MainActivity).getLoaddingDialog()
+        dialog!!.setCancelable(false)
+        dialog!!.show()
         toolbar_main.title = " " //清空标题栏
         setSupportActionBar(toolbar_main)
 
@@ -40,8 +45,8 @@ class MainActivity : AppCompatActivity() {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             supportActionBar!!.setHomeAsUpIndicator(R.mipmap.opendrawer)
         }
-                intoFragment("1")
-//        RequestToStatus()
+//                intoFragment("1")  测试用的
+        RequestToStatus()
     }
 
     private fun intoFragment(status: String?) {
@@ -65,7 +70,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_myNews -> { startActivity(Intent(this@MainActivity, SeeWeekNews::class.java)) }
                 R.id.nav_main -> mDrawerLayout!!.closeDrawer(nav_view)
                 R.id.nav_exit -> {
-//                    BaseActivity().getac().finishAll()
+                startActivity(Intent(this@MainActivity,LoginActivity::class.java))
+                    finish()
                 }
 
             }
@@ -103,10 +109,14 @@ class MainActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .subscribe{
                     StatusBean-> when(StatusBean.infoCode){
-                    200 ->{ intoFragment(StatusBean.status)
+                    200 ->{
+                        dialog!!.dismiss()
+                        intoFragment(StatusBean.status)
                             sharedUtil.putInt(this@MainActivity,StaticClass.WEEK_NUM,StatusBean.weekNum)
                     }
-                    500->{ intoFragment("-1")}
+                    500->{
+                        dialog!!.dismiss()
+                        intoFragment("-1")}
                 }
                 }
     }

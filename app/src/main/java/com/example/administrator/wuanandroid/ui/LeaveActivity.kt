@@ -1,6 +1,7 @@
 package com.example.administrator.wuanandroid.ui
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
@@ -31,7 +32,7 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
     var sharedUtil  = SharedUtil()
     var t = ToastUtil(this@LeaveActivity)
     var l = L()
-
+    var dialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leave)
@@ -41,6 +42,9 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
         btnLeaveWeekAmount3.setOnClickListener(this)
         btnLeaveSubmit.setOnClickListener(this)
         tvWeekNumber.text = sharedUtil.getInt(this@LeaveActivity,StaticClass.WEEK_NUM,1).toString()+"周"
+        dialog = DialogUtil(this@LeaveActivity).getLoaddingDialog()
+
+
     }
 
 
@@ -84,6 +88,8 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun netRequest() {
+        dialog!!.show()
+        dialog!!.setCancelable(false)
         var leave = LeaveRequest()
         leave.groupId = sharedUtil.getInt(this@LeaveActivity,StaticClass.GROUP_ID,0)
         leave.reason = etLeaveReason.text.toString()
@@ -95,8 +101,9 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
         RequestUtil.observable.ILeave(body)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe{
+                .subscribe({
                     LeaveResponse ->
+                    dialog!!.dismiss()
                     when(LeaveResponse.infoCode){
                         200 -> {
                             t.st(LeaveResponse.infoText)
@@ -104,7 +111,10 @@ class LeaveActivity : AppCompatActivity(), View.OnClickListener {
                         }
                         500 -> t.st(LeaveResponse.infoText)
                     }
-                }
+                },{
+                    dialog!!.dismiss()
+                    t.st("提交周报失败")
+                })
     }
 
     private fun leaveToMain() {

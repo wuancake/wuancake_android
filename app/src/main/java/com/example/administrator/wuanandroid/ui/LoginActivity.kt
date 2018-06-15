@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid.ui
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.PointF
 import android.opengl.Visibility
@@ -18,11 +19,8 @@ import com.example.administrator.wuanandroid.Bean.LoginBean.LoginResultBean
 import com.example.administrator.wuanandroid.MainActivity
 import com.example.administrator.wuanandroid.R
 import com.example.administrator.wuanandroid.mView.DisplayUtils
+import com.example.administrator.wuanandroid.utils.*
 
-import com.example.administrator.wuanandroid.utils.L
-import com.example.administrator.wuanandroid.utils.RequestUtil
-import com.example.administrator.wuanandroid.utils.SharedUtil
-import com.example.administrator.wuanandroid.utils.StaticClass
 import com.google.gson.Gson
 
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -52,10 +50,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     val l: L = L()
     val sharedUtil: SharedUtil = SharedUtil()
     var isRemeber :String? = null
-
+    var dialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        dialog = DialogUtil(this@LoginActivity).getLoaddingDialog()
+        dialog!!.setCancelable(false)
         login_login.setOnClickListener(this)
         login_register.setOnClickListener(this)
         initPoint()
@@ -70,9 +70,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun toLogin(accountStr: String, passwordStr: String) {
-        login_view.visibility = View.GONE
+        center_tv.setText("欢迎你")
+
         circle_view.centerImg = center_tv
-        circle_view.openAnimation()
+        dialog!!.show()
         val login = LoginRequestBean()
         val route = StringBuilder()
         login.email = accountStr
@@ -87,7 +88,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                     when (LoginRsultBean.infoCode) {
                         200 -> {
-
+                            dialog!!.dismiss()
+                            login_view.visibility = View.GONE
+                            circle_view.openAnimation()
                             l.i("${login_remeber.isChecked}")
                             if(isRemeber.equals("0")){
                                 sharedUtil.putString(this@LoginActivity,StaticClass.ISREMEBER,"0")
@@ -108,10 +111,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                             }
                         }
                         500 -> {
-
+                            dialog!!.dismiss()
                             login_view.visibility = View.VISIBLE
                             Toast.makeText(this@LoginActivity, "${LoginRsultBean.infoText}", Toast.LENGTH_SHORT).show()
                         }
+
 
 
                     }
@@ -120,6 +124,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                 }, {
                     l.i("${it.message}")
+
                     login_view.visibility = View.VISIBLE
                 })
 

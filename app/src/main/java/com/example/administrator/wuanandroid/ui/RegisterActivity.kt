@@ -9,11 +9,8 @@ import android.widget.Toast
 import com.example.administrator.wuanandroid.Bean.RegisterBean.RegisterRequest
 
 import com.example.administrator.wuanandroid.R
+import com.example.administrator.wuanandroid.utils.*
 
-import com.example.administrator.wuanandroid.utils.L
-import com.example.administrator.wuanandroid.utils.RequestUtil
-import com.example.administrator.wuanandroid.utils.SharedUtil
-import com.example.administrator.wuanandroid.utils.StaticClass
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -24,6 +21,7 @@ class RegisterActivity :AppCompatActivity(), View.OnClickListener {
 
     var l = L()
     var sharedUtil = SharedUtil()
+    var t = ToastUtil(this@RegisterActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,9 +65,12 @@ class RegisterActivity :AppCompatActivity(), View.OnClickListener {
                             sharedUtil.putInt(this@RegisterActivity, StaticClass.GROUP_ID, RegisterResponse.groupId)
                             registerToLogin()
                         }
+                        500 ->{
+                            t.st("${RegisterResponse.infoText}")
+                        }
 
                 }},{
-                    error->Toast.makeText(this@RegisterActivity, "该账号已被注册", Toast.LENGTH_SHORT).show()
+                    error->Toast.makeText(this@RegisterActivity, "网络出现错误", Toast.LENGTH_SHORT).show()
                 })
     }
 
