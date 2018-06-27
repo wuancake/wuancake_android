@@ -45,7 +45,7 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
                 if(week_overEdit.isEmpty() ||week_helpEdit.isEmpty() || next_weekEdit.isEmpty()){
                     t.st("必填项不能为空")
                 }else{
-                    tijiao(week_overEdit!!, week_helpEdit!!, next_weekEdit!!, urlEdit)
+                    tijiao(week_over.text.toString(), week_help.text.toString(), week_next.text.toString(), url.text.toString())
                     var intent = Intent(this@WriteActivity,SavedActivity::class.java)
                     intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY,2)
                     startActivity(intent)
@@ -53,7 +53,7 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
 
             }
             R.id.write_save ->{
-                    saveWeekText(week_overEdit!!, week_helpEdit!!, next_weekEdit!!, urlEdit)
+                    saveWeekText(week_over.text.toString(), week_help.text.toString(), week_next.text.toString(), url.text.toString())
                     var intent = Intent(this@WriteActivity, SavedActivity::class.java)
                     intent.putExtra(StaticClass.IS_UPDATANEEWS_KEY, 1)
                     startActivity(intent)
@@ -97,10 +97,10 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     fun saveWeekText(week_over: String, week_help: String, next_week: String, url: String){
-        util.putString(this@WriteActivity,"week_over",week_over+".")
-        util.putString(this@WriteActivity,"week_help",week_help+".")
-        util.putString(this@WriteActivity,"next_week",next_week+".")
-        util.putString(this@WriteActivity,"week_url",url+".")
+        util.putString(this@WriteActivity,"week_over","${week_over}"+".")
+        util.putString(this@WriteActivity,"week_help","${week_help}"+".")
+        util.putString(this@WriteActivity,"next_week","${next_week}"+".")
+        util.putString(this@WriteActivity,"week_url","${url}"+".")
         isSave = true
     }
 
@@ -122,10 +122,10 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
         //封装实体类
         request.userId = util.getInt(this@WriteActivity,StaticClass.USER_ID,1)
         request.groupId = util.getInt(this@WriteActivity, StaticClass.GROUP_ID, 0)
-        request.complete = week_over + "<br>"
-        request.trouble = week_help + "<br>"
-        request.plane = next_week + "<br>"
-        request.url =  url+"<br>"
+        request.complete = week_over
+        request.trouble = week_help
+        request.plane = next_week
+        request.url =  url
         val gson = Gson()
         var route = gson.toJson(request)
         l.i(route)
@@ -152,10 +152,10 @@ class WriteActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     private fun saveWeekNews() {
-            util.putString(this@WriteActivity, "week_over", "${week_over!!.text}<br>")
-            util.putString(this@WriteActivity, "week_help", "${week_help!!.text}<br>")
-            util.putString(this@WriteActivity, "next_week", "${week_next!!.text}<br>")
-            util.putString(this@WriteActivity, "url", "${url!!.text}<br>")
+            util.putString(this@WriteActivity, "week_over", "${week_over!!.text}")
+            util.putString(this@WriteActivity, "week_help", "${week_help!!.text}")
+            util.putString(this@WriteActivity, "next_week", "${week_next!!.text}")
+            util.putString(this@WriteActivity, "url", "${url!!.text}")
             val intent = Intent(this@WriteActivity, SavedActivity::class.java)
 
     }

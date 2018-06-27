@@ -12,10 +12,8 @@ import com.example.administrator.wuanandroid.Bean.setNewsBean.SetNewsResponse
 
 import io.reactivex.Observable
 import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import okhttp3.ResponseBody
+import retrofit2.http.*
 
 /**
  * Created by Nixo on 25/05/2018.
@@ -68,5 +66,8 @@ interface IApi {
     //获取全部分组
     @GET("/findAllGroupInfo")
     fun getAllGroup(): Observable<AllGroupBean>
+
+    @GET
+    fun upData(@Url url : String) : Observable<ResponseBody>
 
 }

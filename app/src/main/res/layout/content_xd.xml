@@ -24,6 +24,7 @@
 
                 <ImageView
                     android:src="@drawable/cutline"
+                    android:background="#2f9ff5"
                     android:layout_width="3dp"
                     android:layout_height="match_parent" />
                 <LinearLayout
@@ -31,16 +32,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:text="本周完成(必填)"
                         android:textSize="15sp"
                         android:textColor="#2f94ff"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="20dp" />
 
                     <EditText
+
+                        android:gravity="top"
+                        android:background="@null"
                         android:id="@+id/week_over"
                         android:layout_width="310dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="130dp"
                         android:textColor="#444"
                         android:textSize="13sp" />
 
@@ -63,23 +68,27 @@
 
                 <ImageView
                     android:src="@drawable/cutline"
+                    android:background="#2f9ff5"
                     android:layout_width="3dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"  />
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:text="所遇困难(必填)"
                         android:textSize="15sp"
                         android:textColor="#2f94ff"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="20dp" />
 
                     <EditText
+                        android:gravity="top"
+                        android:background="@null"
                         android:id="@+id/week_help"
                         android:layout_width="310dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:textColor="#444"
                         android:textSize="13sp" />
 
@@ -99,27 +108,31 @@
             android:layout_height="150dp">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:src="@drawable/cutline"
+                    android:background="#2f9ff5"
                     android:layout_width="3dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"  />
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:text="下周完成(必填)"
                         android:textSize="15sp"
                         android:textColor="#2f94ff"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="20dp" />
 
                     <EditText
+                        android:gravity="top"
+                        android:background="@null"
                         android:id="@+id/week_next"
                         android:layout_width="310dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:textColor="#444"
                         android:textSize="13sp" />
 
@@ -143,23 +156,27 @@
 
                 <ImageView
                     android:src="@drawable/cutline"
+                    android:background="#2f9ff5"
                     android:layout_width="3dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"  />
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:text="作品链接(选填)"
                         android:textSize="15sp"
                         android:textColor="#2f94ff"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="20dp" />
 
                     <EditText
+                        android:gravity="top"
+                        android:background="@null"
                         android:id="@+id/url"
                         android:layout_width="310dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:textColor="#444"
                         android:textSize="13sp" />
 
@@ -188,7 +205,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:text="保存"
-            android:background="@color/button_white"
+            android:background="@drawable/shape_write"
             android:layout_width="340dp"
             android:layout_height="50dp" />
         <LinearLayout

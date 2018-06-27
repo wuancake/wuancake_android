@@ -16,9 +16,11 @@ object StaticClass {
 
     //Shared总Key
     val NAME = "Shared"
+    // 午安客户端版本号
+    var WUAN_VERSION = 1.0
 
     //午安URL请求地址
-    val WUAN_URL = "http://13.114.107.36:8008"
+    val WUAN_URL = "http://13.125.249.52:8008"
     //    public static final String WUAN_URL = "http://ericheel.free.ngrok.cc";
 
     //当前周数Shared

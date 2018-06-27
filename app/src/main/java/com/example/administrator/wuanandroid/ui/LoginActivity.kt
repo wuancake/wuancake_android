@@ -70,10 +70,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun toLogin(accountStr: String, passwordStr: String) {
-        center_tv.setText("欢迎你")
+        center_tv.visibility = View.VISIBLE
+        center_tv.text = "欢迎您"
 
         circle_view.centerImg = center_tv
-        dialog!!.show()
+//        dialog!!.show()
         val login = LoginRequestBean()
         val route = StringBuilder()
         login.email = accountStr
@@ -88,7 +89,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                     when (LoginRsultBean.infoCode) {
                         200 -> {
-                            dialog!!.dismiss()
+//                            dialog!!.dismiss()
                             login_view.visibility = View.GONE
                             circle_view.openAnimation()
                             l.i("${login_remeber.isChecked}")

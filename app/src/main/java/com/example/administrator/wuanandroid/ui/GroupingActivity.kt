@@ -1,5 +1,6 @@
 package com.example.administrator.wuanandroid.ui
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -22,12 +23,25 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_grouping.*
 import okhttp3.RequestBody
+import android.content.DialogInterface
+
+
 
 
 class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClickListener {
-    override fun ClickListner(id: Int) {
-        group_id = id
-        l.i("$group_id")
+    override fun ClickListner(num: Int) {
+
+        val builder = AlertDialog.Builder(this@GroupingActivity)
+        builder.setTitle("分组选择")
+                .setMessage("您确定选择该分组吗")
+                .setPositiveButton("确定", DialogInterface.OnClickListener { dialog, id ->
+                    group_id = num
+                    l.i(""+group_id)
+                    netRequest()})
+                .setNegativeButton("取消", DialogInterface.OnClickListener { dialog, id ->group_id = 0 })
+        builder.create()
+        builder.show()
+
     }
 
     private var group_id: Int = 0
@@ -41,20 +55,20 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grouping)
         getGroupList()
-        group_marge.setOnClickListener(this)
-        dialog = DialogUtil(this@GroupingActivity).getLoaddingDialog()
+
+//        dialog = DialogUtil(this@GroupingActivity).getLoaddingDialog()
     }
 
     fun getGroupList(){
-        dialog!!.show()
-        dialog!!.setCancelable(false)
+//        dialog!!.show()
+//        dialog!!.setCancelable(false)
         RequestUtil.observable.getAllGroup()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe ({
 
                     AllGroupBean->
-                    dialog!!.dismiss()
+//                    dialog!!.dismiss()
                     var list = ArrayList<AllGroupBean.GroupsBean>()
                     l.i("执行了")
                     for (item in AllGroupBean.groups!!){list.add(item) }
@@ -64,27 +78,20 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
                     group_recycler.adapter = adapter
 
                 },{
-                    dialog!!.dismiss()
+//                    dialog!!.dismiss()
                     t.st("发生${it.message}错误")
         })
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.group_marge-> {
-                if(group_id == 0){
-                    t.st("请选择分组")
-                }else{
-                    netRequest()
-                }
 
-            }
         }
     }
 
 
     private fun netRequest() {
-        dialog!!.show()
+//        dialog!!.show()
         var gr = GroupRequest()
         gr.userId = sharedUtil.getInt(this@GroupingActivity,StaticClass.USER_ID,1)
         gr.groupId = group_id
@@ -96,7 +103,7 @@ class GroupingActivity :AppCompatActivity(), View.OnClickListener,GroupItemClick
                 .subscribeOn(Schedulers.io())
                 .subscribe{
                     GroupResponse ->
-                    dialog!!.dismiss()
+//                    dialog!!.dismiss()
                     when(GroupResponse.infoCode){
                         200 -> {
                             sharedUtil.putInt(this@GroupingActivity,StaticClass.USER_ID, GroupResponse.userId!!)

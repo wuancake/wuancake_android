@@ -63,6 +63,7 @@ class RegisterActivity :AppCompatActivity(), View.OnClickListener {
                         200 ->{
                             sharedUtil.putInt(this@RegisterActivity, StaticClass.USER_ID, RegisterResponse.userId)
                             sharedUtil.putInt(this@RegisterActivity, StaticClass.GROUP_ID, RegisterResponse.groupId)
+                            t.st("注册成功！")
                             registerToLogin()
                         }
                         500 ->{

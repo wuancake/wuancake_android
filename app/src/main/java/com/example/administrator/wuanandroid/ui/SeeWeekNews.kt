@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.example.administrator.wuanandroid.Adapter.MainRecyClickListen
@@ -17,6 +18,7 @@ import com.example.administrator.wuanandroid.utils.*
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import junit.framework.Test
 import kotlinx.android.synthetic.main.activity_see_week_news.*
 import okhttp3.RequestBody
 
@@ -58,12 +60,19 @@ class SeeWeekNews : AppCompatActivity() ,MainRecyClickListen{
         dialog = DialogUtil(this@SeeWeekNews).getLoaddingDialog()
 
         RequestToSeeWeekNews()
-
+//        TestRecy()
 
 
     }
 
-
+    private fun TestRecy(){
+        var bean = SeeWeekResponse.ReportsBean()
+        bean.weekNum = 1
+        list.add(bean)
+        var adapter = SeeAdapter(this@SeeWeekNews,list,this)
+        see_recyview.layoutManager = sp
+        see_recyview.adapter = adapter
+    }
 
 
     private fun RequestToSeeWeekNews() {
@@ -85,20 +94,28 @@ class SeeWeekNews : AppCompatActivity() ,MainRecyClickListen{
                 .subscribe({
                     SeeWeekResponse->
                     dialog!!.dismiss()
-                    l.d("${SeeWeekResponse.reports == null}")
-                    if(SeeWeekResponse.reports != null){
-                        for (item in SeeWeekResponse.reports!!){list.add(item) }
-                        var adapter = SeeAdapter(this@SeeWeekNews,list!!,this)
+                    l.i("执行了")
+
+                    if(SeeWeekResponse.reports == null){
+                        noWeekNews.visibility  = View.VISIBLE
+                    }else{
+                        for (item in SeeWeekResponse.reports!!){
+                            l.i("${item.trouble}")
+                            list.add(item)
+                        }
+                        var adapter = SeeAdapter(this@SeeWeekNews,list,this)
                         see_recyview.layoutManager = sp
                         see_recyview.adapter = adapter
-                    }else{
-                        Toast.makeText(this@SeeWeekNews,"您还没有周报喔",Toast.LENGTH_SHORT)
                     }
 
+
+
                 },{error->
-                    dialog!!.dismiss()
-                    Toast.makeText(this@SeeWeekNews,"服务器出现错误",Toast.LENGTH_SHORT)})
+                   dialog!!.dismiss()
+                    l.i("error"+error.message)
+                    t.st("服务器出现错误")
+                })
+
+
     }
-
-
 }

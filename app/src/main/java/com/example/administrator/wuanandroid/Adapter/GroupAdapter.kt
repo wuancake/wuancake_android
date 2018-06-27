@@ -42,15 +42,7 @@ class GroupAdapter(context: Context, list:ArrayList<AllGroupBean.GroupsBean>, li
 
     override fun onClick(v: View) {
 
-        if(isClick){
-            v.item_week.setBackgroundColor(Color.WHITE)
-            listener.ClickListner(0)
-            isClick = false
-        }else{
-            v.item_week.setBackgroundColor(Color.parseColor("#37c6c0"))
-            listener.ClickListner(v.tag as Int)
-            isClick = true
-        }
+        listener.ClickListner(v.tag as Int)
 
     }
 

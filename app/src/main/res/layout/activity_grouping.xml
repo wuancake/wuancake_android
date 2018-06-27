@@ -52,15 +52,7 @@
                 android:layout_height="wrap_content">
 
             </android.support.v7.widget.RecyclerView>
-        <Button
-            android:id="@+id/group_marge"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/button_white"
-            android:text="确认分组"
-            android:background="@color/button_blue"
-            android:layout_width="300dp"
-            android:layout_height="40dp" />
+
     </LinearLayout>
 
 </LinearLayout>
