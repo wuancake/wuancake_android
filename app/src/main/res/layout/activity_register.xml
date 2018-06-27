@@ -155,19 +155,16 @@
             android:textColorHint="#888888" />
     </LinearLayout>
 
-    <TextView
+    <Button
         android:id="@+id/Submit"
         android:layout_width="330dp"
         android:layout_height="61dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bk_group_card"
-        android:backgroundTint="@color/button_blue"
-        android:foreground="?attr/selectableItemBackground"
+        android:background="@color/button_blue"
         android:gravity="center"
-        android:paddingTop="0dp"
         android:text="提交"
-        android:textColor="@color/text_black"
+        android:textColor="#fff"
         android:textSize="22sp" />
 
     <LinearLayout

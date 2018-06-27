@@ -6,55 +6,68 @@
     android:layout_height="match_parent"
     xmlns:countdown="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <RelativeLayout
         android:background="#2f94ff"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="330dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_marginTop="80dp"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/week"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#fff"
+                        android:text="距离"
+                        android:textSize="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/commitnt_Week"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#fff"
+                        android:text="XXX周"
+                        android:textSize="28dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-            <TextView
-                android:textColor="#fff"
-                android:text="距离"
-                android:textSize="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/commitnt_Week"
-                android:layout_marginLeft="15dp"
-                android:textColor="#fff"
-                android:text="XXX周"
-                android:textSize="28dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#fff"
+                        android:text="结束"
+                        android:textSize="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:text="xx:xx:Xx:Xx"
+                    android:id="@+id/commitnt_timer"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:gravity="center_horizontal"
+                    android:textSize="30sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-            <TextView
-                android:layout_marginLeft="15dp"
-                android:textColor="#fff"
-                android:text="结束"
-                android:textSize="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            </LinearLayout>
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
-        <com.example.administrator.wuanandroid.utils.CountDownView
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            countdown:text_size="60"
-            android:id="@+id/commitnt_csv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-        </com.example.administrator.wuanandroid.utils.CountDownView>
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/commitnt_Commit"

@@ -23,7 +23,7 @@
 
             <TextView
                 android:textColor="#2f94ff"
-                android:text="本周周报已请假"
+                android:text="本周已请假"
                 android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -38,15 +38,17 @@
                 android:textColor="#2f94ff"
                 android:textSize="20sp" />
         </LinearLayout>
-        <com.example.administrator.wuanandroid.utils.CountDownView
-            android:layout_marginTop="20dp"
-            countdown:text_size="60"
-            android:id="@+id/leave_csv"
+
+        <TextView
+
+            android:id="@+id/leave_timer"
+            android:textStyle="bold"
+            android:textColor="#2f94ff"
+            android:layout_marginTop="30dp"
+            android:textSize="30sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </com.example.administrator.wuanandroid.utils.CountDownView>
-
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
     <Button
