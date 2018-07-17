@@ -144,9 +144,11 @@ class MainActivity : AppCompatActivity() {
                         dialog!!.dismiss()
                         intoFragment("${StatusBean.status}")
                             sharedUtil.putInt(this@MainActivity,StaticClass.WEEK_NUM,StatusBean.weekNum)
-                        if(StatusBean.version!!.v > StaticClass.WUAN_VERSION){
-                            l.i("版本"+"${StatusBean.version!!.v}")
-                            update(this@MainActivity,StatusBean!!.version!!.v , StatusBean!!.version!!.url!!)
+                        if(StatusBean.version!=null) {
+                            if (StatusBean.version!!.v > StaticClass.WUAN_VERSION) {
+                                l.i("版本" + "${StatusBean.version!!.v}")
+                                update(this@MainActivity, StatusBean!!.version!!.v, StatusBean!!.version!!.url!!)
+                            }
                         }
                     }
                     500->{
