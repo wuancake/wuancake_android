@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WuAnAndroid</string>
+    <string name="plase_inputEmail">请输入邮箱</string>
+    <string name="plase_inputPassword">请输入密码</string>
+</resources>
