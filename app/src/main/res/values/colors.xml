@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="title">#ffff</color>
+    <color name="wuan_blue">#3195ff</color>
+    <color name="wuan_white">#fefefe</color>
+    <color name="wuan_word">#4b4c4d</color>
+    <color name="wuan_red">#ff0000</color>
 </resources>

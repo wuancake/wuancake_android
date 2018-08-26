@@ -1,0 +1,58 @@
+package com.example.administrator.wuanandroid.Mvp.Model.QuitUnitBean;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/**
+ * @class name: GetQuitUnit
+ * @anthor ：卫士
+ * @time :Create on 2018/8/25  10:11
+ */
+public class GetQuitUnit implements Parcelable {
+    public String infoCode;
+    public String infoText;
+
+    protected GetQuitUnit(Parcel in) {
+        infoCode = in.readString();
+        infoText = in.readString();
+    }
+
+    public static final Creator<GetQuitUnit> CREATOR = new Creator<GetQuitUnit>() {
+        @Override
+        public GetQuitUnit createFromParcel(Parcel in) {
+            return new GetQuitUnit(in);
+        }
+
+        @Override
+        public GetQuitUnit[] newArray(int size) {
+            return new GetQuitUnit[size];
+        }
+    };
+
+    public String getInfoCode() {
+        return infoCode;
+    }
+
+    public void setInfoCode(String infoCode) {
+        this.infoCode = infoCode;
+    }
+
+    public String getInfoText() {
+        return infoText;
+    }
+
+    public void setInfoText(String infoText) {
+        this.infoText = infoText;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(infoCode);
+        parcel.writeString(infoText);
+    }
+}

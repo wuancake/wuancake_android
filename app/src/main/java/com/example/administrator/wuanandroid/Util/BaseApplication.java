@@ -1,10 +1,10 @@
-package com.example.administrator.wuanandroid.Util.Util.Util.Util.Util;
+package com.example.administrator.wuanandroid.Util;
 
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.administrator.wuanandroid.Util.Util.Util.Util.Util.NetUtil.NetWorkManager;
+import com.example.administrator.wuanandroid.Util.NetUtil.NetWorkManager;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +14,6 @@ public class BaseApplication extends Application{
     private static BaseApplication instance;
     private static Context appContext;
     private Set<Activity> allActivities;
-
 
     public static synchronized BaseApplication getInstance(){
         return instance;

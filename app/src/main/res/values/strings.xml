@@ -2,4 +2,19 @@
     <string name="app_name">WuAnAndroid</string>
     <string name="plase_inputEmail">请输入邮箱</string>
     <string name="plase_inputPassword">请输入密码</string>
+    <string name="lr">查看周报</string>
+    <string name="title_qg">退出分组</string>
+    <string name="txt_qg">退出分组后，该账号首次登录，即可重选分组；当然，如果你一直不回来，账号也会为你保留；总之，欢迎你在试错的过程中找到最适合自己的方向。</string>
+    <string name="btn_qg">我知道了，继续退出</string>
+    <string name="title_up">修改密码</string>
+    <string name="op_up">原密码</string>
+    <string name="np_up">新密码</string>
+    <string name="okp_up">确认密码</string>
+    <string name="s_up">提交</string>
+    <string name="title_un">修改昵称</string>
+    <string name="n_un">卫士</string>
+    <string name="s_un">保存</string>
+    <string name="title_mwr">我的周报</string>
+    <string name="zhou">周</string>
+
 </resources>

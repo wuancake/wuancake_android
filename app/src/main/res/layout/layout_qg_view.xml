@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/wuan_blue"
+        >
+        <ImageView
+            android:id="@+id/qg_img"
+            android:layout_width="11dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/left"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="17dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/title_qg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:textColor="@color/wuan_white"
+            android:gravity="center"
+            android:textSize="18dp"
+            />
+        
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginLeft="42.5dp"
+        android:layout_marginRight="42.5dp"
+        android:background="@drawable/card_border"
+        android:elevation="3dp"
+        android:gravity="center_vertical"
+        android:text="@string/txt_qg"
+        android:textColor="@color/wuan_word"
+        android:textSize="26px"
+        />
+    <Button
+        android:id="@+id/qg_btn"
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:background="@drawable/qg_btn"
+        android:textColor="@color/wuan_white"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="80dp"
+        android:text="@string/btn_qg"
+        android:gravity="center"
+        android:textSize="28px"
+        />
+
+</LinearLayout>

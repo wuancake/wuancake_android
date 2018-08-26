@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid.Util.Util.Util.Util.Util.NetUtil.Schedulers;
+package com.example.administrator.wuanandroid.Util.NetUtil.Schedulers;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.Scheduler;
@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.schedulers.Schedulers;
 
-public class SchedulerProvider implements BaseSchedulerProvider {
+public class SchedulerProvider implements com.example.administrator.wuanandroid.Util.NetUtil.Schedulers.BaseSchedulerProvider {
 
     @NonNull
     private  static SchedulerProvider INSTANCE;

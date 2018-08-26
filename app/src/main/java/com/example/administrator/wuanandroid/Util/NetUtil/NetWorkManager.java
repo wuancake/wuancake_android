@@ -1,11 +1,12 @@
-package com.example.administrator.wuanandroid.Util.Util.Util.Util.Util.NetUtil;
+package com.example.administrator.wuanandroid.Util.NetUtil;
+
+import com.example.administrator.wuanandroid.Util.NetUtil.Request.Request;
 
 import okhttp3.OkHttpClient;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import com.example.administrator.wuanandroid.Util.Util.Util.Util.Util.NetUtil.Request.Request;
 
 
 public class NetWorkManager {
@@ -33,7 +34,7 @@ public class NetWorkManager {
         //初始化Retrofit;
         retrofit = new Retrofit.Builder()
                 .client(client)
-                .baseUrl(Request.HOST)
+                .baseUrl(Request.URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

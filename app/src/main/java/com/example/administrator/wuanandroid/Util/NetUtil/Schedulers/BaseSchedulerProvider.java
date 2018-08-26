@@ -1,4 +1,4 @@
-package com.example.administrator.wuanandroid.Util.Util.Util.Util.Util.NetUtil.Schedulers;
+package com.example.administrator.wuanandroid.Util.NetUtil.Schedulers;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.Scheduler;
