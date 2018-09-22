@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bds"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
+    <ImageView
+        android:layout_width="164pt"
+        android:layout_height="132pt"
+        android:layout_marginTop="130pt"
+        android:layout_gravity="center_horizontal"
+        android:background="@mipmap/logo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/wuan_white"
+        android:text="Wuancake"
+        android:textSize="40pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="31pt"
+        android:textAllCaps="false"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:orientation="horizontal"
+        android:layout_marginLeft="148pt"
+        android:layout_marginRight="148pt"
+        android:layout_marginTop="157pt"
+        >
+        <ImageView
+            android:layout_width="32pt"
+            android:layout_height="60pt"
+            android:src="@mipmap/human"
+            android:layout_gravity="bottom"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="30pt"
+            >
+            <EditText
+                android:id="@+id/eamil_txt"
+                android:layout_width="match_parent"
+                android:layout_height="73pt"
+                android:hint="@string/login_eamil"
+                android:background="@null"
+                android:textSize="32pt"
+                android:gravity="bottom"
+
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1pt"
+                android:background="@color/wuan_word"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:orientation="horizontal"
+        android:layout_marginLeft="148pt"
+        android:layout_marginRight="148pt"
+        android:layout_marginTop="55pt"
+        >
+        <ImageView
+            android:layout_width="32pt"
+            android:layout_height="60pt"
+            android:src="@mipmap/lock1"
+            android:layout_gravity="bottom"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="30pt"
+            >
+            <EditText
+                android:id="@+id/pwd_txt"
+                android:layout_width="match_parent"
+                android:layout_height="70pt"
+                android:hint="@string/login_pwd"
+                android:background="@null"
+                android:textSize="32pt"
+                android:gravity="bottom"
+                android:inputType="textPassword"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1pt"
+                android:background="@color/wuan_word"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56pt"
+        android:background="@drawable/login"
+        android:text="@string/login_txt"
+        android:textColor="@color/wuan_white"
+        android:layout_marginTop="124pt"
+        android:textSize="32pt"
+        android:layout_marginLeft="148pt"
+        android:layout_marginRight="148pt"
+        />
+
+    <LinearLayout
+        android:layout_width="380pt"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="195pt"
+        android:layout_marginTop="75pt"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_txt1"
+            android:textSize="32pt"
+            />
+        <TextView
+            android:id="@+id/login_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_txt2"
+            android:textColor="@drawable/text"
+            android:textSize="32pt"
+
+            />
+
+</LinearLayout>
+    </LinearLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            />
+</RelativeLayout>

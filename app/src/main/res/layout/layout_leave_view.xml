@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110pt"
+        android:background="@color/wuan_blue"
+        android:layout_gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/lwr_img"
+            android:layout_width="50pt"
+            android:layout_height="match_parent"
+            android:src="@drawable/ret"
+            android:layout_marginLeft="25pt"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60pt"
+            android:text="@string/title_leave"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="34pt"
+            android:textColor="@color/wuan_white"
+            android:gravity="center"
+            android:textSize="45pt"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100pt"
+        android:layout_marginTop="100pt"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt1_leave"
+            android:textColor="@color/wuan_word"
+            android:textSize="40pt"
+            />
+        <TextView
+            android:id="@+id/weeks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="117"
+            android:textColor="@color/wuan_blue"
+            android:textSize="36pt"
+            android:layout_marginLeft="10pt"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zhou"
+            android:textColor="@color/wuan_blue"
+            android:textSize="36pt"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100pt"
+        android:layout_marginTop="50pt"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt2_leave"
+            android:textColor="@color/wuan_word"
+            android:textSize="40pt"
+            />
+        <TextView
+            android:id="@+id/status_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leave_leave"
+            android:textColor="@color/wuan_blue"
+            android:textSize="36pt"
+            android:layout_marginLeft="10pt"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100pt"
+        android:layout_marginTop="50pt"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt3_leave"
+            android:textColor="@color/wuan_word"
+            android:textSize="40pt"
+            />
+
+
+        <LinearLayout
+            android:background="@drawable/spiiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            >
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownVerticalOffset="20dp"
+                android:layout_margin="2pt"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100pt"
+        android:layout_marginTop="50pt"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt4_leave"
+            android:textColor="@color/wuan_blue"
+            android:textSize="40pt"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240pt"
+        android:layout_marginLeft="100pt"
+        android:layout_marginRight="100pt"
+        android:orientation="horizontal"
+        android:background="@drawable/card_border"
+        android:elevation="4pt"
+        android:layout_marginTop="50pt"
+        >
+        
+        <View
+            android:layout_width="6pt"
+            android:layout_height="match_parent"
+            android:background="@color/wuan_blue"/>
+        <EditText
+            android:id="@+id/reson_leave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15pt"
+            android:background="@null"
+            android:gravity="left|top"
+            android:inputType="textMultiLine"
+            android:hint="@string/txt5_leave"
+            android:textSize="25pt"
+            />
+
+
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/leave_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x120"
+        android:text="@string/regist_submit"
+        android:textColor="@color/wuan_white"
+        android:textSize="@dimen/x40"
+        android:background="@drawable/up"
+        android:layout_marginLeft="@dimen/x100"
+        android:layout_marginRight="@dimen/x100"
+        />
+</LinearLayout>

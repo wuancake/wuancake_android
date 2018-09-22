@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view"
+        android:layout_below="@+id/v3"
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/wuan_img_false"
+        android:layout_above="@+id/radio"
+        />
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/index_btn"
+            style="@style/radiobtn_styles"
+            android:drawableTop="@drawable/index"
+            android:text="首页"
+            android:textColor="@drawable/bottom_bar"
+            android:checked="true"
+
+            />
+        <RadioButton
+            android:id="@+id/report_btn"
+            style="@style/radiobtn_styles"
+            android:drawableTop="@drawable/report"
+            android:text="我的周报"
+            android:textColor="@drawable/bottom_bar"
+            />
+        <RadioButton
+            android:id="@+id/user_btn"
+            style="@style/radiobtn_styles"
+            android:drawableTop="@drawable/user"
+            android:text="我的账号"
+            android:textColor="@drawable/bottom_bar"
+            />
+
+
+
+    </RadioGroup>
+
+</RelativeLayout>

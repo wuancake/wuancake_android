@@ -3,44 +3,48 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="110pt"
         android:background="@color/wuan_blue"
+        android:layout_gravity="center_vertical"
         >
         <ImageView
             android:id="@+id/qg_img"
-            android:layout_width="11dp"
-            android:layout_height="30dp"
-            android:src="@mipmap/left"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="17dp"
+            android:layout_width="50pt"
+            android:layout_height="match_parent"
+            android:src="@drawable/ret"
+            android:layout_marginLeft="25pt"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="60pt"
             android:text="@string/title_up"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="17dp"
+            android:layout_centerInParent="true"
             android:textColor="@color/wuan_white"
             android:gravity="center"
-            android:textSize="36px"
+            android:textSize="45pt"
             />
 
         
     </RelativeLayout>
     <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="30dp"
-    android:layout_marginTop="40dp"
-    android:layout_marginRight="53dp"
-    android:layout_marginLeft="53dp"
+    android:layout_height="60pt"
+    android:layout_marginTop="80pt"
+    android:layout_marginRight="106pt"
+    android:layout_marginLeft="106pt"
     android:background="@drawable/card_border"
     android:orientation="horizontal"
-    android:elevation="3dp"
+    android:elevation="6pt"
     >
     <View
-        android:layout_width="2dp"
+        android:layout_width="4pt"
         android:layout_height="match_parent"
         android:background="@color/wuan_blue"
         />
@@ -50,24 +54,25 @@
         android:layout_height="match_parent"
         android:hint="@string/op_up"
         android:background="@null"
-        android:layout_margin="5dp"
+        android:layout_margin="10pt"
         android:gravity="center_vertical"
         android:textColorHint="@color/wuan_word"
+        android:inputType="textPassword"
         />
 
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginRight="53dp"
-        android:layout_marginLeft="53dp"
+        android:layout_height="60pt"
+        android:layout_marginTop="42pt"
+        android:layout_marginRight="106pt"
+        android:layout_marginLeft="106pt"
         android:background="@drawable/card_border"
         android:orientation="horizontal"
-        android:elevation="3dp"
+        android:elevation="6pt"
         >
         <View
-            android:layout_width="2dp"
+            android:layout_width="4pt"
             android:layout_height="match_parent"
             android:background="@color/wuan_blue"
             />
@@ -77,24 +82,25 @@
             android:layout_height="match_parent"
             android:hint="@string/np_up"
             android:background="@null"
-            android:layout_margin="5dp"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:textColorHint="@color/wuan_word"
+            android:inputType="textPassword"
             />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginRight="53dp"
-        android:layout_marginLeft="53dp"
+        android:layout_height="60pt"
+        android:layout_marginTop="42pt"
+        android:layout_marginRight="106pt"
+        android:layout_marginLeft="106pt"
         android:background="@drawable/card_border"
         android:orientation="horizontal"
-        android:elevation="3dp"
+        android:elevation="6pt"
         >
         <View
-            android:layout_width="2dp"
+            android:layout_width="4pt"
             android:layout_height="match_parent"
             android:background="@color/wuan_blue"
             />
@@ -104,22 +110,23 @@
             android:layout_height="match_parent"
             android:hint="@string/okp_up"
             android:background="@null"
-            android:layout_margin="5dp"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:textColorHint="@color/wuan_word"
+            android:inputType="textPassword"
             />
 
     </LinearLayout>
     <Button
         android:id="@+id/submit_up_btn"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginRight="53dp"
+        android:layout_height="70pt"
+        android:layout_marginTop="132pt"
+        android:layout_marginLeft="106pt"
+        android:layout_marginRight="106pt"
         android:text="@string/s_up"
-        android:background="@drawable/up_btn"
-        android:textSize="36px"
+        android:background="@drawable/up"
+        android:textSize="40pt"
         android:textColor="@color/wuan_white"
         />
 

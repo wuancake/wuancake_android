@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/regist"
+    android:orientation="vertical"
+    >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
+
+    <ImageView
+        android:layout_width="222pt"
+        android:layout_height="174pt"
+        android:src="@mipmap/logo1"
+        android:layout_marginTop="25pt"
+        android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/group_title"
+        android:textColor="@color/wuan_white"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40pt"
+        />
+    <LinearLayout
+        android:layout_width="500pt"
+        android:layout_height="720pt"
+        android:background="@drawable/regist_card"
+        android:layout_marginTop="100pt"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/group_txt"
+            android:textColor="@color/wuan_red"
+            android:layout_marginTop="22pt"
+            android:layout_marginLeft="22pt"
+            android:layout_marginRight="22pt"
+            />
+        
+       <android.support.v7.widget.RecyclerView
+           android:id="@+id/group_rview"
+           android:layout_width="348pt"
+           android:layout_height="480pt"
+           android:layout_marginTop="10pt"
+           android:layout_gravity="center_horizontal"
+           />
+
+
+        <Button
+            android:id="@+id/group_submit"
+            android:layout_width="316pt"
+            android:layout_height="60pt"
+            android:text="@string/group_submit"
+            android:textColor="@color/wuan_white"
+            android:background="@drawable/login"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40pt"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

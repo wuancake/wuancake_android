@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110pt"
+        android:background="@color/wuan_blue"
+        android:layout_gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/lwr_img"
+            android:layout_width="50pt"
+            android:layout_height="match_parent"
+            android:src="@drawable/ret"
+            android:layout_marginLeft="25pt"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60pt"
+            android:text="@string/title_submit"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="34pt"
+            android:textColor="@color/wuan_white"
+            android:gravity="center"
+            android:textSize="45pt"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160pt"
+        android:orientation="horizontal"
+        android:background="@drawable/card_border"
+        android:elevation="4pt"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="90pt"
+        >
+        <View
+            android:layout_width="6pt"
+            android:layout_height="match_parent"
+            android:background="@color/wuan_blue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20pt"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt1_sbmit"
+                android:textColor="@color/wuan_blue"
+                android:textSize="36pt"
+
+                />
+            <EditText
+                android:id="@+id/complete_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/txt2_submit"
+                android:layout_margin="5pt"
+                android:textSize="28pt"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textColor="@color/wuan_word"
+                android:inputType="textMultiLine"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160pt"
+        android:orientation="horizontal"
+        android:background="@drawable/card_border"
+        android:elevation="4pt"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="30pt"
+        >
+        <View
+            android:layout_width="6pt"
+            android:layout_height="match_parent"
+            android:background="@color/wuan_blue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20pt"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt3_submit"
+                android:textColor="@color/wuan_blue"
+                android:textSize="36pt"
+
+                />
+            <EditText
+                android:id="@+id/troub_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/txt2_submit"
+                android:layout_margin="5pt"
+                android:textSize="28pt"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textColor="@color/wuan_word"
+                android:inputType="textMultiLine"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160pt"
+        android:orientation="horizontal"
+        android:background="@drawable/card_border"
+        android:elevation="4pt"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="30pt"
+        >
+        <View
+            android:layout_width="6pt"
+            android:layout_height="match_parent"
+            android:background="@color/wuan_blue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20pt"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt4_submit"
+                android:textColor="@color/wuan_blue"
+                android:textSize="36pt"
+
+                />
+            <EditText
+                android:id="@+id/plane_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/txt2_submit"
+                android:layout_margin="5pt"
+                android:textSize="28pt"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textColor="@color/wuan_word"
+                android:inputType="textMultiLine"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100pt"
+        android:orientation="horizontal"
+        android:background="@drawable/card_border"
+        android:elevation="4pt"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="30pt"
+        >
+        <View
+            android:layout_width="6pt"
+            android:layout_height="match_parent"
+            android:background="@color/wuan_blue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20pt"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt5_submit"
+                android:textColor="@color/wuan_blue"
+                android:textSize="36pt"
+
+                />
+            <EditText
+                android:id="@+id/link_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/txt6_submit"
+                android:layout_margin="5pt"
+                android:textSize="28pt"
+                android:background="@null"
+                android:gravity="left|top"
+                android:textColor="@color/wuan_word"
+                android:inputType="textMultiLine"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="70pt"
+        android:background="@drawable/up"
+        android:text="@string/submit_btn"
+        android:textSize="40pt"
+        android:textColor="@color/wuan_white"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="60pt"
+        />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="70pt"
+        android:background="@drawable/button"
+        android:text="@string/save"
+        android:textSize="40pt"
+        android:textColor="@color/wuan_blue"
+        android:layout_marginLeft="50pt"
+        android:layout_marginRight="50pt"
+        android:layout_marginTop="40pt" />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="76pt"
+    android:button="@null"
+    android:background="@drawable/group"
+    android:gravity="center"
+    android:textColor="@drawable/group_txt"
+    android:id="@+id/group_box"
+    android:layout_marginTop="20pt"
+    android:layout_marginLeft="16pt"
+    android:layout_marginRight="16pt"
+    >
+
+</CheckBox>

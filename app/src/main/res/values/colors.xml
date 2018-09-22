@@ -8,4 +8,10 @@
     <color name="wuan_white">#fefefe</color>
     <color name="wuan_word">#4b4c4d</color>
     <color name="wuan_red">#ff0000</color>
+    <color name="group_bg">#E6E6FA</color>
+    <color name="wuan_img_false">#C0C0C0</color>
+    <color name="wuan_img_true">#3195FF</color>
+    <color name="wuan_black">#000000</color>
+    <color name="bg_btn">#005FEE</color>
+    <color name="bg_btn2">#F2F2F2</color>
 </resources>

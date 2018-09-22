@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="769dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110pt"
+            android:background="@color/wuan_blue"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60pt"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/user_title"
+                android:textColor="@color/wuan_white"
+                android:textSize="45pt" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:layout_marginTop="150pt"
+            >
+            <TextView
+                android:id="@+id/name_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textColor="@color/wuan_img_false"
+                android:textSize="40pt"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+
+            <LinearLayout
+                android:id="@+id/name_l"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                >
+                <TextView
+                    android:id="@+id/name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="---"
+                    android:textColor="@drawable/text"
+                    android:gravity="bottom"
+                    android:textSize="40pt"
+                    />
+                <TextView
+                    android:layout_width="40pt"
+                    android:layout_height="match_parent"
+                    android:text=">"
+                    android:textColor="@drawable/text"
+                    android:textSize="40pt"
+                    android:gravity="bottom"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:background="@color/wuan_img_false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:layout_marginTop="50pt"
+            >
+            <TextView
+                android:id="@+id/email_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_email"
+                android:textColor="@color/wuan_img_false"
+                android:textSize="40pt"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                >
+                <TextView
+                    android:id="@+id/email_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/wuan_img_false"
+                    android:textSize="32pt"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:background="@color/wuan_img_false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:layout_marginTop="50pt"
+            >
+            <TextView
+                android:id="@+id/group_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_group"
+                android:textColor="@color/wuan_img_false"
+                android:textSize="40pt"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                >
+                <TextView
+                    android:id="@+id/group_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---"
+                    android:textColor="@color/wuan_img_false"
+                    android:textSize="32pt"
+
+
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:background="@color/wuan_img_false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:layout_marginTop="50pt"
+            >
+            <TextView
+                android:id="@+id/pwd_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_pwd"
+                android:textColor="@color/wuan_img_false"
+                android:textSize="40pt"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+
+            <LinearLayout
+                android:id="@+id/pwd_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                >
+
+                <TextView
+                    android:layout_width="40pt"
+                    android:layout_height="match_parent"
+                    android:text=">"
+                    android:textColor="@drawable/text"
+                    android:textSize="50pt"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:background="@color/wuan_img_false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:layout_marginTop="50pt"
+            >
+            <TextView
+                android:id="@+id/exit_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_exit"
+                android:textColor="@color/wuan_img_false"
+                android:textSize="40pt"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/exitgroup_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                >
+
+                <TextView
+                    android:layout_width="40pt"
+                    android:layout_height="match_parent"
+                    android:text=">"
+                    android:textColor="@drawable/text"
+                    android:textSize="50pt"
+                    android:gravity="bottom"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="100pt"
+            android:layout_marginRight="100pt"
+            android:background="@color/wuan_img_false" />
+
+        <Button
+            android:id="@+id/exitbtn_user"
+            android:layout_width="match_parent"
+            android:layout_height="70pt"
+            android:layout_marginLeft="180pt"
+            android:layout_marginRight="180pt"
+            android:layout_marginTop="100pt"
+            android:background="@drawable/up"
+            android:text="@string/user_exit_bt"
+            android:textColor="@color/wuan_white"
+            android:textSize="40pt" />
+    </LinearLayout>
+
+
+</RelativeLayout>

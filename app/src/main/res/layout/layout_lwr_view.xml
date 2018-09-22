@@ -3,50 +3,55 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:background="@color/wuan_black"
+        />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="110pt"
         android:background="@color/wuan_blue"
         >
         <ImageView
             android:id="@+id/lwr_img"
-            android:layout_width="11dp"
-            android:layout_height="30dp"
-            android:src="@mipmap/left"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="17dp"
+            android:layout_width="50pt"
+            android:layout_height="match_parent"
+            android:src="@drawable/ret"
+            android:layout_marginLeft="25pt"
+            android:layout_gravity="center_vertical"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="60pt"
             android:text="@string/lr"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="17dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="34pt"
             android:textColor="@color/wuan_white"
             android:gravity="center"
-            android:textSize="36px"
+            android:textSize="45pt"
             />
 
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="400pt"
         android:orientation="horizontal"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="80pt"
+        android:layout_marginLeft="80pt"
+        android:layout_marginRight="80pt"
         android:background="@drawable/card_border"
-        android:elevation="2dp"
+        android:elevation="4pt"
         >
         <View
-            android:layout_width="3dp"
+            android:layout_width="6pt"
             android:layout_height="match_parent"
             android:background="@color/wuan_blue"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="16pt"
+            android:layout_marginRight="16pt"
             android:orientation="vertical"
             >
             <TextView
@@ -54,9 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/wuan_blue"
-                android:textSize="30px"
-                android:text="第143周"
-                android:layout_marginTop="5dp"
+                android:textSize="36pt"
+                android:text="---"
+                android:layout_marginTop="10pt"
 
                 />
             <TextView
@@ -65,6 +70,8 @@
                 android:layout_height="wrap_content"
                 android:text="本周完成："
                 android:textColor="@color/wuan_word"
+                android:layout_marginTop="10pt"
+                android:textSize="30pt"
 
                 />
             <TextView
@@ -73,6 +80,8 @@
                 android:layout_height="wrap_content"
                 android:text="所遇困难："
                 android:textColor="@color/wuan_word"
+                android:layout_marginTop="10pt"
+                android:textSize="30pt"
                 />
             <TextView
                 android:id="@+id/plan_lwr_txt"
@@ -80,6 +89,8 @@
                 android:layout_height="wrap_content"
                 android:text="下周计划："
                 android:textColor="@color/wuan_word"
+                android:layout_marginTop="10pt"
+                android:textSize="30pt"
                 />
             <TextView
                 android:id="@+id/url_lwr_txt"
@@ -87,6 +98,8 @@
                 android:layout_height="wrap_content"
                 android:text="作品连接："
                 android:textColor="@color/wuan_word"
+                android:layout_marginTop="10pt"
+                android:textSize="30pt"
                 />
         </LinearLayout>
 

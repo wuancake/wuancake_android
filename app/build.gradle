@@ -4,10 +4,19 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
+    signingConfigs {
+        config {
+            keyAlias 'wuan'
+            keyPassword '1576180632'
+            storeFile file('C:/Users/Administrator/Desktop/qian/wuan.jks')
+            storePassword '1576180632'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.administrator.wuanandroid"
+        applicationId "com.example.administrator.wuanandroidss"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
@@ -18,6 +27,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
@@ -25,6 +35,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildToolsVersion '28.0.0 rc2'
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
 }
 
 dependencies {
@@ -57,4 +69,9 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0-rc01'
     //CardView
     implementation 'com.android.support:cardview-v7:28.0.0-rc01'
+    implementation 'com.githang:status-bar-compat:0.7'
+
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+
+    implementation 'com.blankj:utilcode:1.20.3'
 }
