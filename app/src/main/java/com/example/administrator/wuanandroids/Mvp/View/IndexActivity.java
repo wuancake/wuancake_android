@@ -37,7 +37,6 @@ import butterknife.OnClick;
  * @time :Create on 2018/9/11  3:31
  */
 public class IndexActivity extends BaseActivity implements ViewPager.OnPageChangeListener, IndexCons.View {
-
     @BindView(R.id.report_btn)
     RadioButton reportBtn;
     @BindView(R.id.user_btn)
@@ -51,56 +50,36 @@ public class IndexActivity extends BaseActivity implements ViewPager.OnPageChang
     ViewPagerAdapter adapter = null;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-
     private IndexPr indexPr;
-    private int userId = 0;
     private List<Fragment> fragmentList = new ArrayList<>();
    private Mythread mythread=null;
+   private  boolean finish=false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_index_view);
         ButterKnife.bind(this);
-
-//        userId = PreUtils.getInt(this, "userId", 0);
-//        indexPr = new IndexPr(new IndexModel(), this);
-//        indexPr.GetDate(new IndexBody(userId));
         mythread=new Mythread();
+
+
     }
-
-
     @Override
     protected void onResume() {
         super.onResume();
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
-        fragmentList.clear();
-        int status = PreUtils.INSTANCE.getInt(this, "status", 1);
+        indexPr = new IndexPr(new IndexModel(), this);
+        indexPr.GetDate(new IndexBody(PreUtils.INSTANCE.getInt(this,"userId",0)));
 
-        if (status == 1) {
-            fragmentList.add(new IndexOneFragment());
-        } else if (status == 2) {
-            fragmentList.add(new SubmitFragment());
-        } else if (status == 3) {
-            fragmentList.add(new LeaveFragment());
-        }
-        fragmentList.add(new MwrFragment());
-        fragmentList.add(new UserFragment());
-        adapter = new ViewPagerAdapter(this, getSupportFragmentManager(), fragmentList);
-        viewPager.setAdapter(adapter);
-        viewPager.setOnPageChangeListener(this);
+
 
     }
-
     @Override
     public void onPageScrolled(int i, float v, int i1) {
 
     }
-
     @Override
     public void onPageSelected(int i) {
         switch (i) {
@@ -116,12 +95,10 @@ public class IndexActivity extends BaseActivity implements ViewPager.OnPageChang
 
         }
     }
-
     @Override
     public void onPageScrollStateChanged(int i) {
 
     }
-
     @OnClick({R.id.index_btn, R.id.report_btn, R.id.user_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -140,8 +117,24 @@ public class IndexActivity extends BaseActivity implements ViewPager.OnPageChang
     @Override
     public void getDateSuccess(GetIndex getIndex) {
         if (getIndex.getInfoCode().equals("200")) {
+            PreUtils.INSTANCE.setInt(this,"status",getIndex.getStatus());
+            fragmentList.clear();
+            int status = PreUtils.INSTANCE.getInt(this, "status", 1);
+            if (status == 1) {
+                fragmentList.add(new IndexOneFragment());
+            } else if (status == 2) {
+                fragmentList.add(new SubmitFragment());
+            } else if (status == 3) {
+                fragmentList.add(new LeaveFragment());
+            }
+            fragmentList.add(new MwrFragment());
+            fragmentList.add(new UserFragment());
+            adapter = new ViewPagerAdapter(this, getSupportFragmentManager(), fragmentList);
+            viewPager.setAdapter(adapter);
+            viewPager.setOnPageChangeListener(this);
+            indexBtn.setChecked(true);
         } else {
-            show_Toast(getIndex.getInfoText());
+//            show_Toast(getIndex.getInfoText());
         }
     }
 
@@ -149,10 +142,8 @@ public class IndexActivity extends BaseActivity implements ViewPager.OnPageChang
     public void getDataFail(Throwable throwable) {
         show_Toast("网络错误！");
     }
-
     //重写onKeyDown方法
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         //判断当点击的是返回键
         if (keyCode == event.KEYCODE_BACK) {
             exit();//退出方法
@@ -187,22 +178,22 @@ public class IndexActivity extends BaseActivity implements ViewPager.OnPageChang
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            mythread=new Mythread();
-            mythread.execute(2);
-        }
-        if (requestCode == 2 && resultCode == 5) {
-            mythread=new Mythread();
-            mythread.execute(2);
-        }
-        if (requestCode== 3 && resultCode == 6) {
-            mythread=new Mythread();
-            mythread.execute(2);
-        }
-        if (requestCode == 7 && resultCode == 8) {
-            mythread=new Mythread();
-            mythread.execute(1);
-        }
+//        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+//            mythread=new Mythread();
+//            mythread.execute(2);
+//        }
+//        if (requestCode == 2 && resultCode == 5) {
+//            mythread=new Mythread();
+//            mythread.execute(2);
+//        }
+//        if (requestCode== 3 && resultCode == 6) {
+//            mythread=new Mythread();
+//            mythread.execute(2);
+//        }
+//        if (requestCode == 7 && resultCode == 8) {
+//            mythread=new Mythread();
+//            mythread.execute(1);
+//        }
 
     }
 

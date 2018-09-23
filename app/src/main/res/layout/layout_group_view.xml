@@ -38,7 +38,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/group_txt"
             android:textColor="@color/wuan_red"
             android:layout_marginTop="22pt"
             android:layout_marginLeft="22pt"

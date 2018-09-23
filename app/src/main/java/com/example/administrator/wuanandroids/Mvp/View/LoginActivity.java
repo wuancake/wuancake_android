@@ -17,10 +17,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.BarUtils;
+import com.example.administrator.wuanandroids.Mvp.Contract.IndexCons;
 import com.example.administrator.wuanandroids.Mvp.Contract.LoginCons;
+import com.example.administrator.wuanandroids.Mvp.Model.IndexBean.GetIndex;
+import com.example.administrator.wuanandroids.Mvp.Model.IndexBean.IndexBody;
+import com.example.administrator.wuanandroids.Mvp.Model.IndexModel;
 import com.example.administrator.wuanandroids.Mvp.Model.LoginBean.GetLogin;
 import com.example.administrator.wuanandroids.Mvp.Model.LoginBean.LoginBody;
 import com.example.administrator.wuanandroids.Mvp.Model.LoginModel;
+import com.example.administrator.wuanandroids.Mvp.Presenter.IndexPr;
 import com.example.administrator.wuanandroids.Mvp.Presenter.LoginPr;
 import com.example.administrator.wuanandroids.R;
 import com.example.administrator.wuanandroids.Tool.PreUtils;
@@ -111,6 +116,11 @@ public class LoginActivity extends BaseActivity implements LoginCons.View {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
     public void getDateSuccess(GetLogin getLogin) {
     if(getLogin.getInfoCode().equals("200")){
         PreUtils.INSTANCE.setInt(this,"status",getLogin.getStatus());
@@ -119,7 +129,7 @@ public class LoginActivity extends BaseActivity implements LoginCons.View {
         PreUtils.INSTANCE.setString(this,"username",getLogin.getUserName());
         PreUtils.INSTANCE.setString(this,"email",eamilTxt.getText().toString());
         PreUtils.INSTANCE.setString(this,"groupName",getLogin.getGroupName());
-        PreUtils.INSTANCE.setInt(this,"groupId",getLogin.getGroupId());
+//        PreUtils.INSTANCE.setInt(this,"groupId",getLogin.getGroupId());
         PreUtils.INSTANCE.setBoolean(this,"first",true);
         show_Toast(getLogin.getInfoText());
 //        show_Toast(getLogin.getStatus()+"");
@@ -134,6 +144,7 @@ public class LoginActivity extends BaseActivity implements LoginCons.View {
         show_Toast(getLogin.getInfoText());
     }
     }
+
 
     @Override
     public void getDataFail(Throwable throwable) {

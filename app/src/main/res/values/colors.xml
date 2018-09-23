@@ -14,4 +14,6 @@
     <color name="wuan_black">#000000</color>
     <color name="bg_btn">#005FEE</color>
     <color name="bg_btn2">#F2F2F2</color>
+    <color name="bg_card">#f2f2f3</color>
+    <color name="dd">#f7f7f7</color>
 </resources>

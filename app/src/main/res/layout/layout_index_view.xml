@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-
     <View
         android:id="@+id/v3"
         android:layout_width="match_parent"
@@ -57,9 +56,5 @@
             android:text="我的账号"
             android:textColor="@drawable/bottom_bar"
             />
-
-
-
     </RadioGroup>
-
 </RelativeLayout>
