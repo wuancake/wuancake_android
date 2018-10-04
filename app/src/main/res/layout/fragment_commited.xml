@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rv_commitnt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/commitnt_header"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <ImageView
+            android:background="@mipmap/bg"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/clock1"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/commitnt_week"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:text="已提交,距离127周开始还剩:"
+            android:textSize="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="180dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+                <View
+                    android:background="@color/color_bantouming"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:textColor="@color/color_3195ff"
+                   android:id="@+id/commitnt_d"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    android:text="24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+                <View
+                    android:background="@color/color_bantouming"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:textColor="@color/color_3195ff"
+                    android:id="@+id/commitnt_h"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    android:text="24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            app:cardElevation="8dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <View
+                android:background="@color/color_bantouming"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+            <TextView
+                android:textColor="@color/color_3195ff"
+                android:id="@+id/commitnt_m"
+                android:textSize="22sp"
+                android:layout_gravity="center"
+                android:text="24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+                <View
+                    android:background="@color/color_bantouming"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:textColor="@color/color_3195ff"
+                    android:id="@+id/commitnt_s"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    android:text="24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/commitnt_bottom"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/commitnt_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/commit_parpue"
+            android:background="@drawable/blue_purse"
+            android:text="提交周报"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+
+        <Button
+            android:id="@+id/commit_leave"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/bg_white_solid"
+            android:textSize="18dp"
+            android:text="我要请假"
+            android:textColor="@color/color_6eaddb"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rv_leave"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/leave_header"
+            android:layout_width="match_parent"
+            android:layout_height="4500dp">
+            <ImageView
+                android:background="@mipmap/bg"
+                android:layout_width="match_parent"
+                android:layout_height="450dp" />
+            <ImageView
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/clock1"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/leave_week"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+               android:layout_marginTop="160dp"
+                android:text="已请假，距离127周开始还剩:"
+                android:textSize="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="210dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+                    <View
+                        android:background="@color/color_bantouming"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                    <TextView
+                        android:textColor="@color/color_3195ff"
+                        android:id="@+id/leave_day"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        android:text="24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+                    <View
+                        android:background="@color/color_bantouming"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                    <TextView
+                        android:textColor="@color/color_3195ff"
+                        android:id="@+id/leave_h"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        android:text="24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+                    <View
+                        android:background="@color/color_bantouming"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                    <TextView
+                        android:textColor="@color/color_3195ff"
+                        android:id="@+id/leave_m"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        android:text="24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+                    <View
+                        android:background="@color/color_bantouming"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                    <TextView
+                        android:textColor="@color/color_3195ff"
+                        android:id="@+id/leave_s"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        android:text="24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/cancel_leave"
+                android:background="@drawable/white_purse"
+                android:text="取消请假"
+                android:textSize="18dp"
+                android:textColor="#3194fd"
+                android:layout_marginTop="320dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

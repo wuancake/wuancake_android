@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">wuan_android_v2</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="welcome_wuan">欢迎来到午安煎饼计划</string>
+    <string name="login">登录</string>
+    <string name="password">密码</string>
+    <string name="email">请输入电子邮箱</string>
+    <string name="welcome_join">欢迎加入午安煎饼计划</string>
+    <string  name="source">
+        退出分组后，该账号首次登陆，即可重新选择分组；\n当然，如果你一直不回来，账号也会为你保留；\n总之，欢迎你在试错的过程中找到最适合自己的方向
+</string>
+</resources>

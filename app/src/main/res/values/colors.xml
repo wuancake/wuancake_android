@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#3195ff</color>
+
+    <color name="statusBarColor">#fff</color>
+
+    <color name="red">#d10b0b</color>
+    <color name="org">#FF6E40</color>
+    <color name="yellow">#F2B753</color>
+
+    <!--状态栏颜色-->
+    <color name="status_bar_color">#25282d</color>
+    <!--主题颜色-->
+    <color name="main_color">#1B82D2</color>
+    <!--白色-->
+    <color name="white">#ffffff</color>
+    <!--黑色-->
+    <color name="black">#000000</color>
+    <!--分割线-->
+    <color name="line">#f1f1f1</color>
+    <!--主题颜色-->
+    <color name="tab_text">#458BEA</color>
+    <!--dialog背景-->
+    <color name="bg_dialog">#a9000000</color>
+    <!--主题背景-->
+    <color name="main_bg">#F0F1F2</color>
+    <color name="drop_down_selected">#458BEA</color>
+    <color name="drop_down_unselected">#ff293f4a</color>
+    <color name="same_black">#5F6B71</color>
+    <color name="mask_color">#88888888</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#458BEA</color>
+    <color name="gray">#dddddd</color>
+    <color name="startColor">#60008DF5</color>
+    <color name="apply_text_true">#1B82D2</color>
+    <color name="apply_text_def">#9EA8B2</color>
+    <color name="apply_text_false">#2AC8B7</color>
+    <!--白色-->
+    <color name="endColor">#ffffff</color>
+
+    <color name="line_color">#12d4dc</color>
+    <color name="text_color">#A6ffffff</color>
+
+    <color name="line_bottom_color">#26000000</color>
+    <color name="card_num_color">#d9000000</color>
+    <color name="nocolor">#00000000</color>
+
+
+
+    <color name="viewfinder_frame">#00cc00</color><!-- 绿色 -->
+    <color name="viewfinder_laser">#ffffff</color><!--白色 -->
+    <color name="viewfinder_mask">#60000000</color><!-- 灰度 -->
+    <color name="result_view">#b0000000</color>
+    <color name="transparent">#00000000</color><!-- 透明 -->
+
+
+    <color name="new_color">#12d4dc</color><!-- 透明 -->
+    <color name="white_color">#ffffffff</color><!-- 透明 -->
+    <color name="color_F97175">#F97175</color><!-- 透明 -->
+    <color name="color_ffeeeeee">#ffeeeeee</color>
+
+    <color name="color_6eaddb">#6eaddb</color>
+    <color name="color_1B82D2">#1B82D2</color>
+    <color name="color_eb6a19">#FF9013</color>
+    <color name="color_3195ff">#3195ff</color>
+    <color name="color_ff6801">#FF6801</color>
+    <color name="plv_color">#FF9012</color>
+    <color name="p2p_theme_color">#FF9012</color>
+    <color name="p2p_theme_blue">#458BEA</color>
+    <color name="error_color">#FF0000</color>
+    <color name="item_text_color">#ff293f4a</color>
+    <color name="color_ededed">#EDEDED</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_bantouming">#4dcccccc</color>
+</resources>
