@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/window"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="246dp"
+        android:layout_height="130dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_white_radius_6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:background="@drawable/bg_dialog_top"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/message"
+                style="@style/dialog_com_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/layout_nomal_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="重新评测"
+                android:textColor="#293F4A" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="前去购买"
+                android:textColor="#ff1a00" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

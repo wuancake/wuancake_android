@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.WriteActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.CardView
+                android:id="@+id/c1"
+                app:cardCornerRadius="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="#2f9ff5"
+                android:layout_width="320dp"
+                android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="#2f9ff5"
+                        />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="本周完成(必填)"
+                            android:textSize="15sp"
+                            android:textColor="#2f94ff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+
+                        <EditText
+                            android:gravity="top"
+                            android:background="@null"
+                            android:maxLines="5"
+                            android:id="@+id/week_over"
+                            android:layout_width="310dp"
+                            android:layout_height="130dp"
+                            android:textColor="#444"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/c2"
+                app:cardCornerRadius="7dp"
+                android:layout_below="@id/c1"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="#2f9ff5"
+                android:layout_width="320dp"
+                android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="#2f9ff5"
+                        />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="所遇问题(必填)"
+                            android:textSize="15sp"
+                            android:textColor="#2f94ff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+
+                        <EditText
+                            android:gravity="top"
+                            android:background="@null"
+                            android:maxLines="5"
+                            android:id="@+id/week_wenti"
+                            android:layout_width="310dp"
+                            android:layout_height="130dp"
+                            android:textColor="#444"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/c3"
+                app:cardCornerRadius="7dp"
+                android:layout_below="@id/c2"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="#2f9ff5"
+                android:layout_width="320dp"
+                android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="#2f9ff5"
+                        />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="下周计划(必填)"
+                            android:textSize="15sp"
+                            android:textColor="#2f94ff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+
+                        <EditText
+                            android:gravity="top"
+                            android:background="@null"
+                            android:maxLines="5"
+                            android:id="@+id/week_next"
+                            android:layout_width="310dp"
+                            android:layout_height="130dp"
+                            android:textColor="#444"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/c4"
+                app:cardCornerRadius="7dp"
+                android:layout_below="@id/c3"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="#2f9ff5"
+                android:layout_width="320dp"
+                android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="#2f9ff5"
+                        />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="作品展示"
+                            android:textSize="15sp"
+                            android:textColor="#2f94ff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+
+                        <EditText
+                            android:gravity="top"
+                            android:background="@null"
+                            android:maxLines="5"
+                            android:id="@+id/week_url"
+                            android:layout_width="310dp"
+                            android:layout_height="130dp"
+                            android:textColor="#444"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:layout_below="@id/c4"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/write_set"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20sp"
+                android:text="提交"
+                android:textColor="#fff"
+                android:background="@drawable/blue_purse"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="340dp"
+                android:layout_height="50dp" />
+            <View
+                android:layout_below="@id/write_set"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
